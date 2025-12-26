@@ -79,6 +79,8 @@ const ContactUsSection = () => {
           flexDirection: isMobile ? "column" : "row",
           gap: 4,
           justifyContent: "center",
+          maxWidth: 1200,
+          mx: "auto",
         }}
         data-aos="fade-up"
         data-aos-delay="100"

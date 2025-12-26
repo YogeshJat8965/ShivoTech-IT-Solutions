@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Stack, useTheme, useMediaQuery } from "@mui/material";
 import AppButton from "./reusable/AppButton";
 import SectionHeading from "./reusable/SectionHeading";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   const theme = useTheme();
@@ -40,22 +41,57 @@ const HeroSection = () => {
         py: { xs: 8, md: 14 },
         bgcolor: "background.paper",
         overflow: "hidden",
-        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 50%, ${theme.palette.secondary.main} 100%)`,
-        backgroundSize: "300% 300%",
-        animation: "gradientShift 10s ease infinite"
+        // Original gradient background (commented out for video background)
+        // background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 50%, ${theme.palette.secondary.main} 100%)`,
+        // backgroundSize: "300% 300%",
+        // animation: "gradientShift 10s ease infinite"
       }}
       id="home"
     >
+      {/* Video Background */}
+      <Box
+        component="video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src={require("../assets/video/videoBackground.mp4")} type="video/mp4" />
+      </Box>
+
+      {/* Dark Overlay for better text readability */}
       <Box
         sx={{
-          maxWidth: 1280,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 1,
+        }}
+      />
+      <Box
+        sx={{
+          maxWidth: 1400,
           mx: "auto",
           display: "flex",
           alignItems: "center",
-          gap: { xs: 4, md: 8 },
+          justifyContent: "center",
+          gap: { xs: 4, md: 10 },
           flexDirection: { xs: "column", md: "row" },
           position: "relative",
-          zIndex: 2
+          zIndex: 2,
+          minHeight: { xs: "auto", md: "70vh" }
         }}
       >
         {/* Left Side Content */}
@@ -77,9 +113,28 @@ const HeroSection = () => {
             fontSize: { xs: "2.5rem", md: "3.5rem" },
             fontWeight: 800,
             mb: 2,
-            textShadow: "0px 2px 20px rgba(0,0,0,0.3)"
+            textShadow: "0px 2px 20px rgba(0,0,0,0.3)",
+            minHeight: { xs: "120px", md: "140px" },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: { xs: "center", md: "flex-start" }
           }}>
-            Empowering Your<br/> Digital Growth
+            <TypeAnimation
+              sequence={[
+                'Empowering Your Digital Growth',
+                2000,
+                'Building Modern Websites',
+                2000,
+                'Boosting Your Online Presence',
+                2000,
+                'Creating Stunning Experiences',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              style={{ display: 'inline-block' }}
+            />
           </SectionHeading>
 
           <Typography
@@ -118,7 +173,7 @@ const HeroSection = () => {
           sx={{
             flex: 1,
             position: "relative",
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             justifyContent: "center",
             alignItems: "center"
           }}
@@ -127,8 +182,9 @@ const HeroSection = () => {
             component="svg"
             viewBox="0 0 520 520"
             sx={{
-              width: { xs: 280, sm: 360, md: 420 },
-              height: "auto"
+              width: { md: 520, lg: 580 },
+              height: "auto",
+              maxWidth: "100%"
             }}
           >
             {/* Outer Gradient Halo */}

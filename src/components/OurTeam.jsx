@@ -14,6 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import amit from "../assets/images/amit.jpg";
 import prashant from "../assets/images/prashant.png";
+import yogesh from "../assets/images/yogesh.jpg";
 
 AOS.init();
 
@@ -45,6 +46,14 @@ const teamMembers = [
     bio: "Develops efficient, scalable applications",
     // github: "https://github.com/priyanair",
   },
+  {
+    name: "Yogesh Jat",
+    role: "Full Stack Developer & Tech Lead",
+    image: yogesh,
+    bio: "Expert in building scalable web applications and leading technical teams.",
+    // linkedin: "https://linkedin.com/in/yogeshjat",
+    // github: "https://github.com/YogeshJat8965",
+  },
 ];
 
 const OurTeam = () => {
@@ -72,6 +81,8 @@ const OurTeam = () => {
         justifyContent="center"
         gap={4}
         mt={4}
+        maxWidth={1400}
+        mx="auto"
         data-aos="fade-up"
         data-aos-delay="100"
       >

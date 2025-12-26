@@ -72,7 +72,7 @@ const drawerList = (
 
   return (
     <AppBar position="sticky" elevation={2} sx={{ bgcolor: '#ffffff', color: '#333' }}>
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <Toolbar sx={{ maxWidth: 1400, mx: "auto", width: "100%", justifyContent: 'space-between' }}>
         {/* Logo / Brand */}
         <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => navigate("/")}>
           <img src={logo} alt="ShivoTech IT Solutions Logo" style={{ width: 110, height: 80, padding: 5}}  />
@@ -97,6 +97,11 @@ const drawerList = (
       mx: 1,
       fontWeight: 600,
       position: 'relative',
+      transition: 'all 0.3s ease',
+      '&:hover': {
+        color: 'primary.main',
+        transform: 'translateY(-2px)',
+      },
       '&::after': {
         content: '""',
         position: 'absolute',
@@ -105,18 +110,16 @@ const drawerList = (
         transform: 'translateX(-50%)',
         width: 0,
         height: '3px',
-        backgroundColor: 'secondary.main',
+        background: 'linear-gradient(90deg, #1E40AF, #F59E0B)',
         transition: 'width 0.3s ease',
-      },
-      '&:hover': {
-        color: 'primary.main',
-        backgroundColor: 'rgba(30, 64, 175, 0.04)',
+        borderRadius: '2px',
       },
       '&:hover::after': {
-        width: '100%',
+        width: '80%',
       },
     }}
   >
+
     {page.label}
   </Button>
 ))}

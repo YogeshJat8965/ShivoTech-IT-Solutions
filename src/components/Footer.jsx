@@ -28,6 +28,8 @@ const Footer = () => {
         alignItems={isMobile ? "flex-start" : "center"}
         gap={4}
         flexWrap="wrap"
+        maxWidth={1400}
+        mx="auto"
       >
         {/* Column 1: Logo + About */}
         <Box flex={1} minWidth={240}>
