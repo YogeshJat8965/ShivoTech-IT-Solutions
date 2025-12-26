@@ -1,7 +1,12 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Paper, Chip } from "@mui/material";
 import SectionHeading from "./reusable/SectionHeading";
 import AppButton from "./reusable/AppButton";
+import { motion } from "framer-motion";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import PeopleIcon from "@mui/icons-material/People";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import aboutbanner from "../assets/images/about-banner.png";
@@ -9,19 +14,44 @@ import aboutbanner from "../assets/images/about-banner.png";
 AOS.init();
 
 const AboutSection = () => {
+  const stats = [
+    { icon: <RocketLaunchIcon />, number: "250+", label: "Projects", color: "#3EC4B9" },
+    { icon: <PeopleIcon />, number: "180+", label: "Clients", color: "#F59E0B" },
+    { icon: <TrendingUpIcon />, number: "85%", label: "Growth", color: "#8B5CF6" },
+    { icon: <EmojiEventsIcon />, number: "95%", label: "Success", color: "#EF4444" },
+  ];
+
   return (
-    <Box sx={{ px: 4, py: 10, backgroundColor: "background.default", position: "relative" }} id="about">
+    <Box sx={{ 
+      px: 4, 
+      py: 10, 
+      background: "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
+      position: "relative",
+      overflow: "hidden",
+    }} id="about">
       {/* Decorative Elements */}
       <Box
         sx={{
           position: "absolute",
-          top: "20%",
-          right: "5%",
-          width: 100,
-          height: 100,
+          top: "10%",
+          right: "-5%",
+          width: 300,
+          height: 300,
           borderRadius: "50%",
-          background: "rgba(30, 64, 175, 0.05)",
-          filter: "blur(40px)",
+          background: "radial-gradient(circle, rgba(62, 196, 185, 0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "20%",
+          left: "-5%",
+          width: 250,
+          height: 250,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
         }}
       />
       

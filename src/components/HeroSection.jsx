@@ -204,7 +204,7 @@ const HeroSection = () => {
             </Typography>
 
             {/* Animated Subheading */}
-            <Box sx={{ minHeight: 80, mb: 3 }}>
+            <Box sx={{ mb: 3 }}>
               <Typography
                 variant="h5"
                 sx={{
@@ -212,14 +212,23 @@ const HeroSection = () => {
                   fontWeight: 600,
                   fontSize: { xs: "1.25rem", md: "1.75rem" },
                   mb: 2,
+                  minHeight: { xs: "70px", sm: "auto" },
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "flex-start",
+                  gap: { xs: 1, md: 0 },
                 }}
               >
-                We specialize in:{" "}
+                <Box component="span" sx={{ whiteSpace: "nowrap" }}>
+                  We specialize in:{" "}
+                </Box>
                 <Box
                   component="span"
                   sx={{
                     color: theme.palette.secondary.main,
                     fontWeight: 700,
+                    display: "inline-block",
+                    minHeight: { xs: "40px", md: "auto" },
                   }}
                 >
                   <TypeAnimation
@@ -270,6 +279,8 @@ const HeroSection = () => {
                 fontFamily: "'Fira Code', monospace",
                 position: "relative",
                 overflow: "hidden",
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
+                animation: "glow 3s ease-in-out infinite",
                 "&::before": {
                   content: '""',
                   position: "absolute",
@@ -282,6 +293,45 @@ const HeroSection = () => {
                 },
               }}
             >
+              {/* Live Indicator Badge */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 8,
+                  right: 12,
+                  zIndex: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 0.5,
+                  background: "rgba(16, 185, 129, 0.2)",
+                  px: 1,
+                  py: 0.5,
+                  borderRadius: 1,
+                  border: "1px solid rgba(16, 185, 129, 0.4)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    bgcolor: "#10B981",
+                    animation: "pulse 2s ease-in-out infinite",
+                    boxShadow: "0 0 8px #10B981",
+                  }}
+                />
+                <Typography
+                  sx={{
+                    fontSize: "0.65rem",
+                    color: "#10B981",
+                    fontWeight: 600,
+                    fontFamily: "'Fira Code', monospace",
+                  }}
+                >
+                  LIVE
+                </Typography>
+              </Box>
+
               {/* Terminal Header */}
               <Box
                 sx={{
@@ -310,15 +360,63 @@ const HeroSection = () => {
                 </Typography>
               </Box>
 
-              {/* Code Content */}
-              <Box sx={{ position: "relative" }}>
-                <CodeIcon sx={{ color: "#3B82F6", mr: 1, fontSize: 18, verticalAlign: "middle" }} />
+              {/* Command Prompt Line */}
+              <Box sx={{ position: "relative", mb: 1 }}>
                 <Typography
                   component="span"
                   sx={{
                     color: "#10B981",
                     fontSize: { xs: "0.85rem", md: "0.95rem" },
                     fontFamily: "'Fira Code', monospace",
+                    fontWeight: 600,
+                  }}
+                >
+                  $ 
+                </Typography>
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#60A5FA",
+                    fontSize: { xs: "0.85rem", md: "0.95rem" },
+                    fontFamily: "'Fira Code', monospace",
+                    ml: 1,
+                  }}
+                >
+                  execute
+                </Typography>
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#F59E0B",
+                    fontSize: { xs: "0.85rem", md: "0.95rem" },
+                    fontFamily: "'Fira Code', monospace",
+                    ml: 1,
+                  }}
+                >
+                  magic.js
+                </Typography>
+              </Box>
+
+              {/* Code Output */}
+              <Box sx={{ position: "relative", pl: 2, borderLeft: "2px solid rgba(59, 130, 246, 0.3)" }}>
+                <CodeIcon sx={{ 
+                  color: "#3B82F6", 
+                  mr: 1, 
+                  fontSize: 18, 
+                  verticalAlign: "middle",
+                  animation: "pulse 2s ease-in-out infinite",
+                }} />
+                <Typography
+                  component="span"
+                  key={codeIndex}
+                  sx={{
+                    color: "#10B981",
+                    fontSize: { xs: "0.85rem", md: "0.95rem" },
+                    fontFamily: "'Fira Code', monospace",
+                    fontWeight: 500,
+                    textShadow: "0 0 10px rgba(16, 185, 129, 0.5)",
+                    animation: "slideUp 0.5s ease-out",
+                    display: "inline-block",
                   }}
                 >
                   {codeSnippets[codeIndex]}
@@ -524,104 +622,7 @@ const HeroSection = () => {
             ))}
           </Box>
         </Box>
-
-        {/* Bottom Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Paper
-            elevation={0}
-            sx={{
-              mt: 8,
-              p: 3,
-              background: "rgba(255, 255, 255, 0.05)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              borderRadius: 4,
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-around",
-              alignItems: "center",
-              gap: 3,
-            }}
-          >
-            {[
-              { label: "Fresh & Innovative", sublabel: "Modern Solutions" },
-              { label: "Fast Delivery", sublabel: "On-Time Always" },
-              { label: "24/7 Support", sublabel: "We're Here For You" },
-              { label: "Best Pricing", sublabel: "Quality + Value" },
-            ].map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  textAlign: "center",
-                  flex: { xs: "0 0 calc(50% - 12px)", md: "1" },
-                  minWidth: 120,
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: { xs: "0.9rem", md: "1.1rem" },
-                    mb: 0.5,
-                  }}
-                >
-                  {item.label}
-                </Typography>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    color: "rgba(255, 255, 255, 0.6)",
-                    fontSize: { xs: "0.7rem", md: "0.8rem" },
-                  }}
-                >
-                  {item.sublabel}
-                </Typography>
-              </Box>
-            ))}
-          </Paper>
-        </motion.div>
       </Box>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        style={{
-          position: "absolute",
-          bottom: 30,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 2,
-        }}
-      >
-        <Box
-          sx={{
-            width: 30,
-            height: 50,
-            border: "2px solid rgba(255, 255, 255, 0.3)",
-            borderRadius: 20,
-            display: "flex",
-            justifyContent: "center",
-            pt: 1,
-          }}
-        >
-          <Box
-            sx={{
-              width: 6,
-              height: 10,
-              bgcolor: "rgba(255, 255, 255, 0.8)",
-              borderRadius: 3,
-              animation: "float 2s ease-in-out infinite",
-            }}
-          />
-        </Box>
-      </motion.div>
     </Box>
   );
 };
