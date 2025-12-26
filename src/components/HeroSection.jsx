@@ -29,6 +29,21 @@ const HeroSection = () => {
       "0%": { transform: "scale(1)", opacity: 0.9 },
       "50%": { transform: "scale(1.1)", opacity: 1 },
       "100%": { transform: "scale(1)", opacity: 0.9 }
+    },
+    "@keyframes svgFloatY": {
+      "0%": { transform: "translateY(0)" },
+      "50%": { transform: "translateY(-15px)" },
+      "100%": { transform: "translateY(0)" }
+    },
+    "@keyframes svgFloatX": {
+      "0%": { transform: "translateX(0)" },
+      "50%": { transform: "translateX(12px)" },
+      "100%": { transform: "translateX(0)" }
+    },
+    "@keyframes svgPulse": {
+      "0%": { transform: "scale(1)", opacity: 0.9 },
+      "50%": { transform: "scale(1.1)", opacity: 1 },
+      "100%": { transform: "scale(1)", opacity: 0.9 }
     }
   };
 
@@ -188,7 +203,8 @@ const HeroSection = () => {
             sx={{
               width: { md: 520, lg: 580 },
               height: "auto",
-              maxWidth: "100%"
+              maxWidth: "100%",
+              ...animations,
             }}
           >
             {/* Outer Gradient Halo */}
@@ -206,14 +222,14 @@ const HeroSection = () => {
             <circle cx="260" cy="260" r="240" fill="url(#outerHalo)" />
 
             {/* Floating Glass Cards */}
-            <g style={{ animation: "floatY 5s ease-in-out infinite" }}>
-              <rect x="120" y="150" rx="14" width="280" height="200" fill="#fff" opacity="0.9" />
+            <g style={{ animation: "svgFloatY 5s ease-in-out infinite" }}>
+              <rect x="120" y="150" rx="14" width="280" height="200" fill="#fff" opacity="0.95" />
               <text
                 x="160"
                 y="200"
                 fontSize="16"
                 fontWeight="600"
-                fill={theme.palette.text.primary}
+                fill="#1e293b"
               >
                 🚀 Digital Solutions
               </text>
@@ -221,7 +237,7 @@ const HeroSection = () => {
                 x="160"
                 y="230"
                 fontSize="14"
-                fill={theme.palette.text.secondary}
+                fill="#64748b"
               >
                 Websites | Marketing | SEO
               </text>
@@ -234,27 +250,27 @@ const HeroSection = () => {
               stroke="url(#chipGrad)"
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ animation: "floatX 6s ease-in-out infinite" }}
+              style={{ animation: "svgFloatX 6s ease-in-out infinite" }}
             />
 
             {/* Floating Stat Badges */}
-            <g style={{ animation: "pulse 3s ease-in-out infinite" }}>
-              <rect x="60" y="240" rx="12" width="110" height="38" fill="#fff" opacity="0.9" />
-              <text x="75" y="265" fontSize="12" fill={theme.palette.text.primary}>
+            <g style={{ animation: "svgPulse 3s ease-in-out infinite" }}>
+              <rect x="60" y="240" rx="12" width="110" height="38" fill="#fff" opacity="0.95" />
+              <text x="75" y="265" fontSize="12" fontWeight="600" fill="#1e293b">
                 250+ Projects
               </text>
             </g>
 
-            <g style={{ animation: "pulse 3.5s ease-in-out infinite" }}>
-              <rect x="360" y="160" rx="12" width="120" height="38" fill="#fff" opacity="0.9" />
-              <text x="375" y="185" fontSize="12" fill={theme.palette.text.primary}>
+            <g style={{ animation: "svgPulse 3.5s ease-in-out infinite" }}>
+              <rect x="360" y="160" rx="12" width="120" height="38" fill="#fff" opacity="0.95" />
+              <text x="375" y="185" fontSize="12" fontWeight="600" fill="#1e293b">
                 85% Growth 📈
               </text>
             </g>
 
             {/* Decorative Nodes */}
-            <circle cx="120" cy="140" r="7" fill="#F59E0B" style={{ animation: "pulse 2s infinite" }} />
-            <circle cx="420" cy="340" r="7" fill="#3B82F6" style={{ animation: "pulse 2.5s infinite" }} />
+            <circle cx="120" cy="140" r="7" fill="#F59E0B" style={{ animation: "svgPulse 2s infinite" }} />
+            <circle cx="420" cy="340" r="7" fill="#3B82F6" style={{ animation: "svgPulse 2.5s infinite" }} />
           </Box>
         </Box>
       </Box>

@@ -37,7 +37,7 @@ const FloatingActions = () => {
       sx={{
         position: "fixed",
         bottom: { xs: 80, sm: 20 },
-        right: 0,
+        right: 16,
         display: "flex",
         flexDirection: "column",
         gap: 2,
