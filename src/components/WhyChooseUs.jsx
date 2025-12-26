@@ -154,7 +154,7 @@ const WhyChooseUs = () => {
 
           <Grid container spacing={4} justifyContent="center">
             {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index}>
+              <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
                   sx={{
                     textAlign: "center",
