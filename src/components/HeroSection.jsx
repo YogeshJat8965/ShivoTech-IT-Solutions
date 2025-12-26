@@ -37,10 +37,12 @@ const HeroSection = () => {
       sx={{
         ...animations,
         position: "relative",
-        px: { xs: 3, md: 6 },
+        px: { xs: 2, md: 6 },
         py: { xs: 8, md: 14 },
         bgcolor: "background.paper",
         overflow: "hidden",
+        width: "100%",
+        maxWidth: "100vw",
         // Original gradient background (commented out for video background)
         // background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 50%, ${theme.palette.secondary.main} 100%)`,
         // backgroundSize: "300% 300%",
@@ -95,14 +97,15 @@ const HeroSection = () => {
         }}
       >
         {/* Left Side Content */}
-        <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, color: "#fff" }}>
+        <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, color: "#fff", width: "100%", overflow: "hidden" }}>
           <Typography
             variant="overline"
             sx={{
               color: theme.palette.secondary.light,
               fontWeight: 700,
               letterSpacing: 3,
-              fontSize: "0.875rem"
+              fontSize: { xs: "0.7rem", md: "0.875rem" },
+              wordWrap: "break-word",
             }}
           >
             WELCOME TO SHIVOTECH IT SOLUTIONS
@@ -110,14 +113,15 @@ const HeroSection = () => {
 
           <SectionHeading sx={{ 
             color: "#fff", 
-            fontSize: { xs: "2.5rem", md: "3.5rem" },
+            fontSize: { xs: "1.75rem", md: "3.5rem" },
             fontWeight: 800,
             mb: 2,
             textShadow: "0px 2px 20px rgba(0,0,0,0.3)",
             minHeight: { xs: "200px", md: "140px" },
             display: "flex",
             alignItems: "center",
-            justifyContent: { xs: "center", md: "flex-start" }
+            justifyContent: { xs: "center", md: "flex-start" },
+            lineHeight: { xs: 1.3, md: 1.2 },
           }}>
             <TypeAnimation
               sequence={[
