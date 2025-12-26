@@ -152,61 +152,63 @@ const WhyChooseUs = () => {
             Results that speak louder than words
           </Typography>
 
-          <Grid container spacing={4} justifyContent="center">
-            {stats.map((stat, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <Box
-                  sx={{
-                    textAlign: "center",
-                    p: { xs: 3, md: 4 },
-                    borderRadius: 4,
-                    background: "rgba(255, 255, 255, 0.08)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    transition: "all 0.4s ease",
-                    "&:hover": {
-                      background: "rgba(255, 255, 255, 0.12)",
-                      transform: "translateY(-8px)",
-                      border: "1px solid rgba(245, 158, 11, 0.5)",
-                    },
-                  }}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <Box sx={{ mb: 2 }}>{stat.icon}</Box>
-                  <Typography
-                    variant="h2"
+          <Box sx={{ width: "100%", overflow: "hidden" }}>
+            <Grid container spacing={4} justifyContent="center">
+              {stats.map((stat, index) => (
+                <Grid item xs={12} sm={6} md={3} key={index}>
+                  <Box
                     sx={{
-                      color: "#FCD34D",
-                      fontWeight: 900,
-                      mb: 1,
-                      fontSize: { xs: "2.5rem", md: "4rem" },
-                      letterSpacing: "-0.02em",
+                      textAlign: "center",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 4,
+                      background: "rgba(255, 255, 255, 0.08)",
+                      backdropFilter: "blur(10px)",
+                      border: "1px solid rgba(255, 255, 255, 0.15)",
+                      transition: "all 0.4s ease",
+                      "&:hover": {
+                        background: "rgba(255, 255, 255, 0.12)",
+                        transform: "translateY(-8px)",
+                        border: "1px solid rgba(245, 158, 11, 0.5)",
+                      },
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                   >
-                    {inView ? (
-                      <>
-                        <CountUp end={stat.number} duration={2.5} />
-                        {stat.suffix}
-                      </>
-                    ) : (
-                      "0" + stat.suffix
-                    )}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "rgba(255, 255, 255, 0.85)",
-                      fontWeight: 500,
-                      fontSize: { xs: "0.875rem", md: "1rem" },
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                    <Box sx={{ mb: 2 }}>{stat.icon}</Box>
+                    <Typography
+                      variant="h2"
+                      sx={{
+                        color: "#FCD34D",
+                        fontWeight: 900,
+                        mb: 1,
+                        fontSize: { xs: "2.5rem", md: "4rem" },
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {inView ? (
+                        <>
+                          <CountUp end={stat.number} duration={2.5} />
+                          {stat.suffix}
+                        </>
+                      ) : (
+                        "0" + stat.suffix
+                      )}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "rgba(255, 255, 255, 0.85)",
+                        fontWeight: 500,
+                        fontSize: { xs: "0.875rem", md: "1rem" },
+                      }}
+                    >
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Box>
       </Box>
 
@@ -247,87 +249,89 @@ const WhyChooseUs = () => {
           >
             We combine expertise, innovation, and dedication to deliver exceptional results
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Box
-                  sx={{
-                    p: 4,
-                    height: "100%",
-                    background: "#fff",
-                    borderRadius: 3,
-                    border: "2px solid",
-                    borderColor: "grey.100",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    position: "relative",
-                    overflow: "hidden",
-                    "&:hover": {
-                      transform: "translateY(-10px)",
-                      borderColor: feature.color,
-                      boxShadow: `0 20px 50px ${feature.color}25`,
-                      "&::before": {
-                        opacity: 1,
-                      },
-                    },
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: "5px",
-                      background: `linear-gradient(90deg, ${feature.color}, ${feature.color}80)`,
-                      opacity: 0,
-                      transition: "opacity 0.4s ease",
-                    },
-                  }}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
+          <Box sx={{ width: "100%", overflow: "hidden" }}>
+            <Grid container spacing={4} justifyContent="center">
+              {features.map((feature, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
                   <Box
                     sx={{
-                      width: 70,
-                      height: 70,
+                      p: 4,
+                      height: "100%",
+                      background: "#fff",
                       borderRadius: 3,
-                      background: `linear-gradient(135deg, ${feature.color}15, ${feature.color}05)`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mb: 3,
-                      color: feature.color,
-                      transition: "all 0.4s ease",
-                      ".MuiBox-root:hover &": {
-                        transform: "scale(1.1) rotate(5deg)",
+                      border: "2px solid",
+                      borderColor: "grey.100",
+                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      position: "relative",
+                      overflow: "hidden",
+                      "&:hover": {
+                        transform: "translateY(-10px)",
+                        borderColor: feature.color,
+                        boxShadow: `0 20px 50px ${feature.color}25`,
+                        "&::before": {
+                          opacity: 1,
+                        },
+                      },
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: "5px",
+                        background: `linear-gradient(90deg, ${feature.color}, ${feature.color}80)`,
+                        opacity: 0,
+                        transition: "opacity 0.4s ease",
                       },
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                   >
-                    {feature.icon}
+                    <Box
+                      sx={{
+                        width: 70,
+                        height: 70,
+                        borderRadius: 3,
+                        background: `linear-gradient(135deg, ${feature.color}15, ${feature.color}05)`,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        mb: 3,
+                        color: feature.color,
+                        transition: "all 0.4s ease",
+                        ".MuiBox-root:hover &": {
+                          transform: "scale(1.1) rotate(5deg)",
+                        },
+                      }}
+                    >
+                      {feature.icon}
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: "text.primary",
+                        fontWeight: 700,
+                        mb: 2,
+                        fontSize: "1.25rem",
+                      }}
+                    >
+                      {feature.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "text.secondary",
+                        lineHeight: 1.8,
+                        fontSize: "0.95rem",
+                      }}
+                    >
+                      {feature.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: "text.primary",
-                      fontWeight: 700,
-                      mb: 2,
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    {feature.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "text.secondary",
-                      lineHeight: 1.8,
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {feature.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Box>
       </Box>
     </>

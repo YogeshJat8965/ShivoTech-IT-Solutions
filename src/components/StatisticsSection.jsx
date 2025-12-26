@@ -79,97 +79,99 @@ const StatisticsSection = () => {
         }}
       />
 
-      <Grid container spacing={5} sx={{ position: "relative", zIndex: 2, maxWidth: 1400, mx: "auto" }}>
-        {stats.map((stat, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: 5,
-                textAlign: "center",
-                background: "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
-                backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255, 255, 255, 0.2)",
-                borderRadius: 5,
-                position: "relative",
-                overflow: "hidden",
-                transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                "&:hover": {
-                  transform: "translateY(-15px) scale(1.05)",
-                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)",
-                  boxShadow: "0px 30px 60px rgba(0, 0, 0, 0.4)",
-                  border: "2px solid rgba(245, 158, 11, 0.5)",
-                },
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "4px",
-                  background: "linear-gradient(90deg, #F59E0B, #3B82F6, #8B5CF6)",
-                  opacity: 0,
-                  transition: "opacity 0.3s ease",
-                },
-                "&:hover::before": {
-                  opacity: 1,
-                },
-              }}
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
-            >
-              <Box 
-                sx={{ 
-                  mb: 3,
-                  "& svg": {
-                    transition: "transform 0.5s ease",
+      <Box sx={{ width: "100%", overflow: "hidden" }}>
+        <Grid container spacing={5} sx={{ position: "relative", zIndex: 2, maxWidth: 1400, mx: "auto" }}>
+          {stats.map((stat, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 5,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
+                  backdropFilter: "blur(20px)",
+                  border: "2px solid rgba(255, 255, 255, 0.2)",
+                  borderRadius: 5,
+                  position: "relative",
+                  overflow: "hidden",
+                  transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                  "&:hover": {
+                    transform: "translateY(-15px) scale(1.05)",
+                    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)",
+                    boxShadow: "0px 30px 60px rgba(0, 0, 0, 0.4)",
+                    border: "2px solid rgba(245, 158, 11, 0.5)",
                   },
-                  "&:hover svg": {
-                    transform: "scale(1.2) rotate(10deg)",
-                  }
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "4px",
+                    background: "linear-gradient(90deg, #F59E0B, #3B82F6, #8B5CF6)",
+                    opacity: 0,
+                    transition: "opacity 0.3s ease",
+                  },
+                  "&:hover::before": {
+                    opacity: 1,
+                  },
                 }}
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
               >
-                {stat.icon}
-              </Box>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "#fff",
-                  fontWeight: 900,
-                  mb: 1,
-                  background: "linear-gradient(135deg, #ffffff 0%, #FCD34D 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  fontSize: { xs: "2.5rem", md: "3.5rem" },
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {inView ? (
-                  <>
-                    <CountUp end={stat.number} duration={2.5} />
-                    {stat.suffix}
-                  </>
-                ) : (
-                  "0" + stat.suffix
-                )}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.9)",
-                  fontWeight: 600,
-                  fontSize: "1.1rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-              >
-                {stat.label}
-              </Typography>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
+                <Box 
+                  sx={{ 
+                    mb: 3,
+                    "& svg": {
+                      transition: "transform 0.5s ease",
+                    },
+                    "&:hover svg": {
+                      transform: "scale(1.2) rotate(10deg)",
+                    }
+                  }}
+                >
+                  {stat.icon}
+                </Box>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    color: "#fff",
+                    fontWeight: 900,
+                    mb: 1,
+                    background: "linear-gradient(135deg, #ffffff 0%, #FCD34D 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    fontSize: { xs: "2.5rem", md: "3.5rem" },
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {inView ? (
+                    <>
+                      <CountUp end={stat.number} duration={2.5} />
+                      {stat.suffix}
+                    </>
+                  ) : (
+                    "0" + stat.suffix
+                  )}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "rgba(255, 255, 255, 0.9)",
+                    fontWeight: 600,
+                    fontSize: "1.1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  {stat.label}
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 };

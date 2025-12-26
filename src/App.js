@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@mui/material";
 import Header from "./components/Header";
 import AOSInitializer from "./components/AOSInitializer";
 import FloatingActions from "./components/CTAButton";
@@ -11,7 +12,7 @@ import Articitamol from "./pages/Articitamol";
 
 function App() {
   return (
-    <>
+    <Box sx={{ width: "100%", maxWidth: "100vw", overflow: "hidden" }}>
       <Router>
         <CustomCursor />
         <ScrollProgressBar />
@@ -24,7 +25,7 @@ function App() {
         </Routes>
         <FloatingActions />
       </Router>
-    </>
+    </Box>
   );
 }
 

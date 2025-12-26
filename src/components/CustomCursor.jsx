@@ -10,14 +10,18 @@ const CustomCursor = () => {
     let particleId = 0;
 
     const updateMousePosition = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // 🔒 CRITICAL FIX: Constrain mouse position to viewport bounds
+      const constrainedX = Math.min(Math.max(0, e.clientX), window.innerWidth - 10);
+      const constrainedY = Math.min(Math.max(0, e.clientY), window.innerHeight - 10);
+      
+      setMousePosition({ x: constrainedX, y: constrainedY });
 
       // Create particle trail
       if (Math.random() > 0.7) {
         const newParticle = {
           id: particleId++,
-          x: e.clientX,
-          y: e.clientY,
+          x: constrainedX,
+          y: constrainedY,
           size: Math.random() * 8 + 4,
           color: Math.random() > 0.5 ? '#F59E0B' : '#1E40AF',
           opacity: 1,

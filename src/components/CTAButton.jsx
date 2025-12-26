@@ -13,20 +13,24 @@ const pulse = keyframes`
 const FloatingActions = () => {
   const [expanded, setExpanded] = useState(null);
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
+  // Ensure component is mounted only after first render
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    setMounted(true);
   }, []);
 
+  // Scroll visibility handler
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Auto collapse expanded button
   useEffect(() => {
     if (expanded) {
       const timer = setTimeout(() => setExpanded(null), 3000);
@@ -38,13 +42,17 @@ const FloatingActions = () => {
     if (expanded === type) {
       if (type === "whatsapp") {
         window.open("https://wa.me/917805058023", "_blank");
-      } else if (type === "phone") {
+      } else {
         window.location.href = "tel:+919981255949";
       }
     } else {
       setExpanded(type);
     }
   };
+
+  // 🔒 CRITICAL FIX:
+  // Do not render anything until user scrolls
+  if (!mounted || !visible) return null;
 
   return (
     <Box
@@ -56,16 +64,16 @@ const FloatingActions = () => {
         flexDirection: "column",
         gap: 2,
         zIndex: 1000,
-        transform: visible ? "translateX(0)" : "translateX(150px)",
-        transition: "transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease",
-        opacity: visible ? 1 : 0,
-        pointerEvents: visible ? "auto" : "none",
+        transform: "translateX(0)",
+        opacity: 1,
+        willChange: "transform",
       }}
     >
       {/* WhatsApp Button */}
-      <Tooltip title="Chat on WhatsApp" placement="left">
+      <Tooltip title="Chat on WhatsApp" placement="left" disablePortal>
         <Paper
           onClick={() => handleClick("whatsapp")}
+          elevation={4}
           sx={{
             px: expanded === "whatsapp" ? 2 : 1.5,
             py: 1.5,
@@ -76,21 +84,19 @@ const FloatingActions = () => {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            transition: "all 0.3s ease",
             width: expanded === "whatsapp" ? "auto" : 56,
             height: 56,
             animation: `${pulse} 2s infinite`,
             boxShadow: "0px 4px 12px rgba(16, 185, 129, 0.4)",
+            transition: "all 0.3s ease",
             "&:hover": {
               backgroundColor: "#059669",
-              boxShadow: "0px 6px 20px rgba(16, 185, 129, 0.5)",
-            }
+            },
           }}
-          elevation={4}
         >
           <WhatsAppIcon sx={{ fontSize: 28 }} />
           {expanded === "whatsapp" && (
-            <Typography variant="body2" ml={1} sx={{ whiteSpace: "nowrap" }}>
+            <Typography ml={1} variant="body2" whiteSpace="nowrap">
               Chat on WhatsApp
             </Typography>
           )}
@@ -98,9 +104,10 @@ const FloatingActions = () => {
       </Tooltip>
 
       {/* Phone Button */}
-      <Tooltip title="Call Now" placement="left">
+      <Tooltip title="Call Now" placement="left" disablePortal>
         <Paper
           onClick={() => handleClick("phone")}
+          elevation={4}
           sx={{
             px: expanded === "phone" ? 2 : 1.5,
             py: 1.5,
@@ -111,21 +118,19 @@ const FloatingActions = () => {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            transition: "all 0.3s ease",
             width: expanded === "phone" ? "auto" : 56,
             height: 56,
             animation: `${pulse} 2s infinite`,
             boxShadow: "0px 4px 12px rgba(59, 130, 246, 0.4)",
+            transition: "all 0.3s ease",
             "&:hover": {
               backgroundColor: "#1E40AF",
-              boxShadow: "0px 6px 20px rgba(59, 130, 246, 0.5)",
-            }
+            },
           }}
-          elevation={4}
         >
           <PhoneIcon sx={{ fontSize: 28 }} />
           {expanded === "phone" && (
-            <Typography variant="body2" ml={1} sx={{ whiteSpace: "nowrap" }}>
+            <Typography ml={1} variant="body2" whiteSpace="nowrap">
               Call Now
             </Typography>
           )}
