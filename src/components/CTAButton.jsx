@@ -36,12 +36,12 @@ const FloatingActions = () => {
     <Box
       sx={{
         position: "fixed",
-        bottom: 20,
+        bottom: { xs: 80, sm: 20 },
         right: 0,
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        zIndex: 9999,
+        zIndex: 1000,
       }}
     >
       {/* WhatsApp Button */}
@@ -49,9 +49,9 @@ const FloatingActions = () => {
         <Paper
           onClick={() => handleClick("whatsapp")}
           sx={{
-            px: expanded === "whatsapp" ? 2 : 1,
-            py: 1,
-            borderRadius: "40px 0 0 40px",
+            px: expanded === "whatsapp" ? 2 : 1.5,
+            py: 1.5,
+            borderRadius: "50%",
             backgroundColor: "#10B981",
             color: "#fff",
             display: "flex",
@@ -59,7 +59,8 @@ const FloatingActions = () => {
             justifyContent: "center",
             cursor: "pointer",
             transition: "all 0.3s ease",
-            ml: "auto",
+            width: expanded === "whatsapp" ? "auto" : 56,
+            height: 56,
             animation: `${pulse} 2s infinite`,
             boxShadow: "0px 4px 12px rgba(16, 185, 129, 0.4)",
             "&:hover": {
@@ -69,9 +70,9 @@ const FloatingActions = () => {
           }}
           elevation={4}
         >
-          <WhatsAppIcon />
+          <WhatsAppIcon sx={{ fontSize: 28 }} />
           {expanded === "whatsapp" && (
-            <Typography variant="body2" ml={1}>
+            <Typography variant="body2" ml={1} sx={{ whiteSpace: "nowrap" }}>
               Chat on WhatsApp
             </Typography>
           )}
@@ -83,9 +84,9 @@ const FloatingActions = () => {
         <Paper
           onClick={() => handleClick("phone")}
           sx={{
-            px: expanded === "phone" ? 2 : 1,
-            py: 1,
-            borderRadius: "40px 0 0 40px",
+            px: expanded === "phone" ? 2 : 1.5,
+            py: 1.5,
+            borderRadius: "50%",
             backgroundColor: "#3B82F6",
             color: "#fff",
             display: "flex",
@@ -93,7 +94,8 @@ const FloatingActions = () => {
             justifyContent: "center",
             cursor: "pointer",
             transition: "all 0.3s ease",
-            ml: "auto",
+            width: expanded === "phone" ? "auto" : 56,
+            height: 56,
             animation: `${pulse} 2s infinite`,
             boxShadow: "0px 4px 12px rgba(59, 130, 246, 0.4)",
             "&:hover": {
@@ -103,9 +105,9 @@ const FloatingActions = () => {
           }}
           elevation={4}
         >
-          <PhoneIcon />
+          <PhoneIcon sx={{ fontSize: 28 }} />
           {expanded === "phone" && (
-            <Typography variant="body2" ml={1}>
+            <Typography variant="body2" ml={1} sx={{ whiteSpace: "nowrap" }}>
               Call Now
             </Typography>
           )}

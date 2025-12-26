@@ -114,7 +114,7 @@ const HeroSection = () => {
             fontWeight: 800,
             mb: 2,
             textShadow: "0px 2px 20px rgba(0,0,0,0.3)",
-            minHeight: { xs: "120px", md: "140px" },
+            minHeight: { xs: "200px", md: "140px" },
             display: "flex",
             alignItems: "center",
             justifyContent: { xs: "center", md: "flex-start" }
