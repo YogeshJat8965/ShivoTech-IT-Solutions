@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Stack, Link, Divider, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import logo from "../assets/images/ShivoTech IT Solutions.png";
 
 const Footer = () => {
   const theme = useTheme();
@@ -10,11 +11,13 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: "text.primary",
+        background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
         color: "background.paper",
         px: 4,
-        py: 6,
-        mt: 6,
+        py: 8,
+        mt: 8,
+        borderTop: "1px solid",
+        borderColor: "divider"
       }}
     >
       {/* Main Flex Container */}
@@ -30,12 +33,12 @@ const Footer = () => {
         <Box flex={1} minWidth={240}>
           <Box
             component="img"
-            src="/doitrocket.png"
-            alt="Doitrocket Logo"
-            sx={{ height: 150, width: 200, mb: 2 }}
+            src={logo}
+            alt="ShivoTech IT Solutions Logo"
+            sx={{ height: 150, width: 200, mb: 2, filter: "brightness(1.2)" }}
           />
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            Doitrocket IT Solutions is your one-stop agency for Web, SEO, Marketing & Design.
+          <Typography variant="body2" sx={{ color: "#94A3B8" }}>
+            ShivoTech IT Solutions is your one-stop agency for Web, SEO, Marketing & Design.
           </Typography>
         </Box>
 
@@ -51,10 +54,12 @@ const Footer = () => {
                 href={`#${item.toLowerCase()}`}
                 underline="hover"
                 sx={{
-                  color: "background.paper",
+                  color: "#E2E8F0",
                   fontSize: 14,
+                  transition: "all 0.3s ease",
                   "&:hover": {
-                    color: "secondary.main",
+                    color: "#F59E0B",
+                    transform: "translateX(4px)"
                   },
                 }}
               >
@@ -66,26 +71,26 @@ const Footer = () => {
 
         {/* Column 3: Contact Info */}
         <Box flex={1} minWidth={240}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1, color: "#F59E0B" }}>
             Contact Us
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary", mb: 1 }}>
-            Email: contact@doitrocket.com
+          <Typography variant="body2" sx={{ color: "#94A3B8", mb: 1 }}>
+            Email: contact@shivotech.com
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary", mb: 1 }}>
+          <Typography variant="body2" sx={{ color: "#94A3B8", mb: 1 }}>
             Phone: +91 98765 43210
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography variant="body2" sx={{ color: "#94A3B8" }}>
             Mon – Fri: 10 AM – 6 PM
           </Typography>
         </Box>
       </Box>
 
-      <Divider sx={{ my: 4, borderColor: "divider" }} />
+      <Divider sx={{ my: 4, borderColor: "rgba(255, 255, 255, 0.1)" }} />
 
       {/* Bottom Copyright */}
-      <Typography variant="body2" color="text.secondary" align="center">
-        © {new Date().getFullYear()} Doitrocket IT Solutions. All rights reserved.
+      <Typography variant="body2" color="#94A3B8" align="center">
+        © {new Date().getFullYear()} ShivoTech IT Solutions. All rights reserved.
       </Typography>
     </Box>
   );

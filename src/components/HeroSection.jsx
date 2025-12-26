@@ -37,12 +37,12 @@ const HeroSection = () => {
         ...animations,
         position: "relative",
         px: { xs: 3, md: 6 },
-        py: { xs: 6, md: 12 },
+        py: { xs: 8, md: 14 },
         bgcolor: "background.paper",
         overflow: "hidden",
-        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 50%, ${theme.palette.secondary.main} 100%)`,
         backgroundSize: "300% 300%",
-        animation: "gradientShift 8s ease infinite"
+        animation: "gradientShift 10s ease infinite"
       }}
       id="home"
     >
@@ -65,26 +65,35 @@ const HeroSection = () => {
             sx={{
               color: theme.palette.secondary.light,
               fontWeight: 700,
-              letterSpacing: 2
+              letterSpacing: 3,
+              fontSize: "0.875rem"
             }}
           >
-            WELCOME TO DOITROCKET IT SOLUTIONS
+            WELCOME TO SHIVOTECH IT SOLUTIONS
           </Typography>
 
-          <SectionHeading sx={{ color: "#fff", fontSize: { xs: "2rem", md: "3rem" } }}>
+          <SectionHeading sx={{ 
+            color: "#fff", 
+            fontSize: { xs: "2.5rem", md: "3.5rem" },
+            fontWeight: 800,
+            mb: 2,
+            textShadow: "0px 2px 20px rgba(0,0,0,0.3)"
+          }}>
             Empowering Your<br/> Digital Growth
           </SectionHeading>
 
           <Typography
             variant="subtitle1"
             sx={{
-              color: "#e6e6e6",
+              color: "#f1f5f9",
               maxWidth: 600,
               mt: 2,
-              mx: { xs: "auto", md: 0 }
+              mx: { xs: "auto", md: 0 },
+              fontSize: { xs: "1rem", md: "1.125rem" },
+              lineHeight: 1.8
             }}
           >
-            At Doitrocket IT Solutions, we build modern websites, boost visibility
+            At ShivoTech IT Solutions, we build modern websites, boost visibility
             through SEO, and create stunning brand experiences.
           </Typography>
 
@@ -129,8 +138,8 @@ const HeroSection = () => {
                 <stop offset="100%" stopColor="transparent" />
               </radialGradient>
               <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor={theme.palette.secondary.main} />
-                <stop offset="100%" stopColor={theme.palette.primary.main} />
+                <stop offset="0%" stopColor="#F59E0B" />
+                <stop offset="100%" stopColor="#3B82F6" />
               </linearGradient>
             </defs>
 
@@ -184,8 +193,8 @@ const HeroSection = () => {
             </g>
 
             {/* Decorative Nodes */}
-            <circle cx="120" cy="140" r="7" fill={theme.palette.secondary.main} style={{ animation: "pulse 2s infinite" }} />
-            <circle cx="420" cy="340" r="7" fill={theme.palette.primary.main} style={{ animation: "pulse 2.5s infinite" }} />
+            <circle cx="120" cy="140" r="7" fill="#F59E0B" style={{ animation: "pulse 2s infinite" }} />
+            <circle cx="420" cy="340" r="7" fill="#3B82F6" style={{ animation: "pulse 2.5s infinite" }} />
           </Box>
         </Box>
       </Box>
@@ -201,7 +210,7 @@ const HeroSection = () => {
               width: 400,
               height: 400,
               borderRadius: "50%",
-              background: `${theme.palette.secondary.main}33`,
+              background: `radial-gradient(circle, #F59E0B40 0%, transparent 70%)`,
               filter: "blur(120px)",
               zIndex: 1
             }}
@@ -214,7 +223,7 @@ const HeroSection = () => {
               width: 420,
               height: 420,
               borderRadius: "50%",
-              background: `${theme.palette.primary.main}33`,
+              background: `radial-gradient(circle, #3B82F640 0%, transparent 70%)`,
               filter: "blur(140px)",
               zIndex: 1
             }}

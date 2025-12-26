@@ -52,7 +52,7 @@ const FloatingActions = () => {
             px: expanded === "whatsapp" ? 2 : 1,
             py: 1,
             borderRadius: "40px 0 0 40px",
-            backgroundColor: "#25D366",
+            backgroundColor: "#10B981",
             color: "#fff",
             display: "flex",
             alignItems: "center",
@@ -61,6 +61,11 @@ const FloatingActions = () => {
             transition: "all 0.3s ease",
             ml: "auto",
             animation: `${pulse} 2s infinite`,
+            boxShadow: "0px 4px 12px rgba(16, 185, 129, 0.4)",
+            "&:hover": {
+              backgroundColor: "#059669",
+              boxShadow: "0px 6px 20px rgba(16, 185, 129, 0.5)",
+            }
           }}
           elevation={4}
         >
@@ -81,7 +86,7 @@ const FloatingActions = () => {
             px: expanded === "phone" ? 2 : 1,
             py: 1,
             borderRadius: "40px 0 0 40px",
-            backgroundColor: "#D32F2F",
+            backgroundColor: "#3B82F6",
             color: "#fff",
             display: "flex",
             alignItems: "center",
@@ -90,6 +95,11 @@ const FloatingActions = () => {
             transition: "all 0.3s ease",
             ml: "auto",
             animation: `${pulse} 2s infinite`,
+            boxShadow: "0px 4px 12px rgba(59, 130, 246, 0.4)",
+            "&:hover": {
+              backgroundColor: "#1E40AF",
+              boxShadow: "0px 6px 20px rgba(59, 130, 246, 0.5)",
+            }
           }}
           elevation={4}
         >

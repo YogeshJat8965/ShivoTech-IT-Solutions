@@ -49,8 +49,22 @@ const teamMembers = [
 
 const OurTeam = () => {
   return (
-    <Box sx={{ px: 4, py: 8, backgroundColor: "background.paper" }} id="team">
+    <Box sx={{ px: 4, py: 10, backgroundColor: "background.paper" }} id="team">
       <SectionHeading data-aos="fade-up">Meet Our Team</SectionHeading>
+      <Typography 
+        variant="subtitle1" 
+        sx={{ 
+          textAlign: "center", 
+          color: "text.secondary", 
+          maxWidth: 700, 
+          mx: "auto", 
+          mb: 6 
+        }}
+        data-aos="fade-up"
+        data-aos-delay="50"
+      >
+        Talented professionals dedicated to your success
+      </Typography>
 
       <Box
         display="flex"
@@ -64,15 +78,22 @@ const OurTeam = () => {
         {teamMembers.map((member, index) => (
           <Paper
             key={index}
-            elevation={3}
+            elevation={2}
             sx={{
               width: { xs: "100%", sm: "45%", md: "22%" },
               minWidth: 260,
               p: 4,
               textAlign: "center",
-              transition: "transform 0.3s ease",
+              transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+              borderRadius: 4,
+              border: "1px solid",
+              borderColor: "divider",
+              background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
               "&:hover": {
-                transform: "translateY(-5px)",
+                transform: "translateY(-8px)",
+                boxShadow: "0px 16px 40px rgba(30, 64, 175, 0.15)",
+                borderColor: "primary.light",
+                background: "linear-gradient(135deg, #ffffff 0%, #EFF6FF 100%)",
               },
             }}
           >
@@ -80,7 +101,13 @@ const OurTeam = () => {
               <Avatar
                 src={member.image}
                 alt={member.name}
-                sx={{ width: 80, height: 80 }}
+                sx={{ 
+                  width: 100, 
+                  height: 100,
+                  border: "4px solid",
+                  borderColor: "primary.main",
+                  boxShadow: "0px 4px 16px rgba(30, 64, 175, 0.2)"
+                }}
               />
               <Typography variant="h6" sx={{ color: "primary.main", fontWeight: 600 }}>
                 {member.name}

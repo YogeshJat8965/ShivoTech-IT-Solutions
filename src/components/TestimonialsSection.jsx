@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Arjun Mehta",
     feedback:
-      "Doitrocket delivered a fast, beautiful website and helped us boost traffic through SEO.",
+      "ShivoTech delivered a fast, beautiful website and helped us boost traffic through SEO.",
     image: "/images/client1.jpg",
     rating: 5,
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",

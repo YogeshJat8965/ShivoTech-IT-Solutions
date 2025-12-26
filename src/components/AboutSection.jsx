@@ -43,7 +43,7 @@ const AboutSection = () => {
             variant="body1"
             sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8 }}
           >
-            At <strong>Doitrocket IT Solutions</strong>, we specialize in
+            At <strong>ShivoTech IT Solutions</strong>, we specialize in
             creating impactful digital experiences that empower businesses to
             grow. From custom website development and result-driven SEO to
             digital marketing strategies and brand-centric designs, we make sure

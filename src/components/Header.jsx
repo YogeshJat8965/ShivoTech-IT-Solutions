@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/ShivoTech IT Solutions.png";
 
 const pages = [
   { label: "Home", link: "/" },
@@ -40,7 +41,7 @@ const drawerList = (
   <Box sx={{ width: 250, p: 2 }} role="presentation">
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <Typography variant="h6" sx={{ color: 'secondary.main', fontWeight: 700 }}>
-        Doitrocket
+        ShivoTech IT Solutions
       </Typography>
       <IconButton onClick={toggleDrawer(false)}>
         <CloseIcon />
@@ -70,11 +71,11 @@ const drawerList = (
 
 
   return (
-    <AppBar position="sticky" elevation={2} sx={{ bgcolor: '#f5f5f5', color: '#333' }}>
+    <AppBar position="sticky" elevation={2} sx={{ bgcolor: '#ffffff', color: '#333' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo / Brand */}
-        <Box sx={{ display: 'flex', alignItems: 'center' }} onClick={() => navigate("/")}>
-          <img src='/doitrocket.png' alt="Doitrocket Logo" style={{ width: 110, height: 80, padding: 5}}  />
+        <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => navigate("/")}>
+          <img src={logo} alt="ShivoTech IT Solutions Logo" style={{ width: 110, height: 80, padding: 5}}  />
         </Box>
 
         {/* Desktop Nav */}
@@ -94,10 +95,25 @@ const drawerList = (
     sx={{
       color: 'secondary.main',
       mx: 1,
-      fontWeight: 500,
+      fontWeight: 600,
+      position: 'relative',
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: 0,
+        height: '3px',
+        backgroundColor: 'secondary.main',
+        transition: 'width 0.3s ease',
+      },
       '&:hover': {
         color: 'primary.main',
-        backgroundColor: 'rgba(211, 47, 47, 0.08)',
+        backgroundColor: 'rgba(30, 64, 175, 0.04)',
+      },
+      '&:hover::after': {
+        width: '100%',
       },
     }}
   >

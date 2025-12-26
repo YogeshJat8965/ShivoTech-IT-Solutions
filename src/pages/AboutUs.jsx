@@ -21,7 +21,7 @@ const AboutUs = () => {
         }}
       >
         <Typography variant="h3" sx={{ color: "primary.main", fontWeight: 700 }} data-aos="fade-up">
-          About Doitrocket IT Solutions
+          About ShivoTech IT Solutions
         </Typography>
         <Typography
           variant="subtitle1"
@@ -53,7 +53,7 @@ const AboutUs = () => {
     align="center"
     sx={{ maxWidth: 700, mx: "auto", color: "text.secondary", mb: 6 }}
   >
-    The visionaries behind Doitrocket — driving creativity, performance, and digital transformation.
+    The visionaries behind ShivoTech — driving creativity, performance, and digital transformation.
   </Typography>
 
   <Grid container spacing={6} justifyContent="center">
@@ -83,7 +83,7 @@ const AboutUs = () => {
           CEO & Founder
         </Typography>
         <Typography variant="body2" sx={{ color: "text.secondary", mb: 2, maxWidth: 320, mx: "auto" }}>
-          With a bold vision for innovation, Ravi transforms ideas into world-class digital products and leads strategy at Doitrocket.
+          With a bold vision for innovation, Ravi transforms ideas into world-class digital products and leads strategy at ShivoTech.
         </Typography>
         <Button
           href="https://linkedin.com/in/raviverma"
