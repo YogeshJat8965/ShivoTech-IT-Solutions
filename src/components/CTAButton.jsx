@@ -12,6 +12,20 @@ const pulse = keyframes`
 
 const FloatingActions = () => {
   const [expanded, setExpanded] = useState(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (expanded) {
@@ -42,6 +56,10 @@ const FloatingActions = () => {
         flexDirection: "column",
         gap: 2,
         zIndex: 1000,
+        transform: visible ? "translateX(0)" : "translateX(150px)",
+        transition: "transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease",
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
       }}
     >
       {/* WhatsApp Button */}
