@@ -81,7 +81,7 @@ const HeroSection = () => {
         minHeight: { xs: "100vh", md: "95vh" },
         display: "flex",
         alignItems: "center",
-        pt: { xs: 8, md: 16 },
+        pt: { xs: "100px", md: 16 },
       }}
       id="home"
     >
