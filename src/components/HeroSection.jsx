@@ -66,7 +66,7 @@ const HeroSection = () => {
         ...animations,
         position: "relative",
         px: { xs: 2, md: 6 },
-        py: { xs: 10, md: 16 },
+        py: { xs: 3, md: 16 },
         background: `linear-gradient(135deg, 
           ${theme.palette.primary.dark} 0%, 
           #0F172A 25%,
@@ -81,6 +81,7 @@ const HeroSection = () => {
         minHeight: { xs: "100vh", md: "95vh" },
         display: "flex",
         alignItems: "center",
+        pt: { xs: 8, md: 16 },
       }}
       id="home"
     >
@@ -151,6 +152,10 @@ const HeroSection = () => {
             sx={{
               textAlign: { xs: "center", md: "left" },
               animation: "slideUp 1s ease-out",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: { xs: "center", md: "flex-start" },
             }}
           >
             {/* Badge */}
@@ -163,7 +168,7 @@ const HeroSection = () => {
                 icon={<RocketLaunchIcon sx={{ fontSize: 20 }} />}
                 label="Welcome to Digital Excellence"
                 sx={{
-                  mb: 3,
+                  mb: { xs: 2, md: 3 },
                   px: 2,
                   py: 2.5,
                   fontSize: "1rem",
@@ -190,7 +195,7 @@ const HeroSection = () => {
                 fontWeight: 900,
                 fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4rem", lg: "4.5rem" },
                 lineHeight: 1.1,
-                mb: 2,
+                mb: { xs: 1.5, md: 2 },
                 textShadow: "0 4px 20px rgba(0,0,0,0.3)",
                 background: "linear-gradient(135deg, #ffffff 0%, #E0E7FF 100%)",
                 WebkitBackgroundClip: "text",
@@ -204,22 +209,31 @@ const HeroSection = () => {
             </Typography>
 
             {/* Animated Subheading */}
-            <Box sx={{ mb: 3 }}>
+            <Box sx={{ mb: { xs: 2, md: 3 } }}>
               <Typography
                 variant="h5"
                 sx={{
                   color: "#E0E7FF",
                   fontWeight: 600,
                   fontSize: { xs: "1.25rem", md: "1.75rem" },
-                  mb: 2,
-                  minHeight: { xs: "70px", sm: "auto" },
+                  mb: { xs: 1.5, md: 2 },
+                  minHeight: { xs: "85px", sm: "auto" },
                   display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "flex-start",
-                  gap: { xs: 1, md: 0 },
+                  flexDirection: { xs: "column", md: "row" },
+                  flexWrap: { xs: "nowrap", md: "nowrap" },
+                  alignItems: { xs: "center", md: "flex-start" },
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  gap: { xs: 0.5, md: 0 },
+                  textAlign: { xs: "center", md: "left" },
                 }}
               >
-                <Box component="span" sx={{ whiteSpace: "nowrap" }}>
+                <Box 
+                  component="span" 
+                  sx={{ 
+                    whiteSpace: "nowrap",
+                    width: { xs: "100%", md: "auto" },
+                  }}
+                >
                   We specialize in:{" "}
                 </Box>
                 <Box
@@ -229,6 +243,7 @@ const HeroSection = () => {
                     fontWeight: 700,
                     display: "inline-block",
                     minHeight: { xs: "40px", md: "auto" },
+                    width: { xs: "100%", md: "auto" },
                   }}
                 >
                   <TypeAnimation

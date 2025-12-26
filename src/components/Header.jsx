@@ -53,10 +53,27 @@ export default function Header() {
 const drawerList = (
   <Box 
     sx={{ 
-      width: 280, 
-      height: '100%',
-      background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-      color: '#fff'
+      width: '100vw', 
+      height: '100vh',
+      background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #1E40AF 100%)',
+      color: '#fff',
+      position: 'relative',
+      overflow: 'hidden',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `radial-gradient(circle at 20% 50%, rgba(62, 196, 185, 0.15) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%)`,
+        animation: 'breathe 8s ease-in-out infinite',
+      },
+      '@keyframes breathe': {
+        '0%, 100%': { opacity: 0.5 },
+        '50%': { opacity: 1 },
+      },
     }} 
     role="presentation"
   >
@@ -65,13 +82,33 @@ const drawerList = (
         p: 3,
         borderBottom: '1px solid rgba(62, 196, 185, 0.2)',
         background: 'rgba(62, 196, 185, 0.05)',
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-        <Typography variant="h6" sx={{ color: '#3EC4B9', fontWeight: 700 }}>
-          ShivoTech
-        </Typography>
-        <IconButton onClick={toggleDrawer(false)} sx={{ color: '#3EC4B9' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <img 
+            src={logo} 
+            alt="ShivoTech" 
+            style={{ width: 50, height: 50 }}
+          />
+          <Typography variant="h6" sx={{ color: '#3EC4B9', fontWeight: 700 }}>
+            ShivoTech
+          </Typography>
+        </Box>
+        <IconButton 
+          onClick={toggleDrawer(false)} 
+          sx={{ 
+            color: '#3EC4B9',
+            background: 'rgba(62, 196, 185, 0.1)',
+            '&:hover': {
+              background: 'rgba(62, 196, 185, 0.2)',
+              transform: 'rotate(90deg)',
+            },
+            transition: 'all 0.3s ease',
+          }}
+        >
           <CloseIcon />
         </IconButton>
       </Box>
@@ -87,7 +124,7 @@ const drawerList = (
         }}
       />
     </Box>
-    <List sx={{ px: 2, py: 3 }}>
+    <List sx={{ px: 3, py: 3, position: 'relative', zIndex: 1 }}>
       {pages.map((page, index) => (
         <ListItem
           button
@@ -103,11 +140,24 @@ const drawerList = (
           }}
           sx={{
             borderRadius: 2,
-            mb: 1,
+            mb: 2,
+            py: 1.5,
             transition: 'all 0.3s ease',
+            animation: `slideInRight 0.5s ease-out ${index * 0.1}s backwards`,
+            '@keyframes slideInRight': {
+              '0%': {
+                opacity: 0,
+                transform: 'translateX(50px)',
+              },
+              '100%': {
+                opacity: 1,
+                transform: 'translateX(0)',
+              },
+            },
             '&:hover': {
-              background: 'rgba(62, 196, 185, 0.1)',
-              transform: 'translateX(8px)',
+              background: 'rgba(62, 196, 185, 0.15)',
+              transform: 'translateX(10px)',
+              boxShadow: '0 4px 15px rgba(62, 196, 185, 0.2)',
             }
           }}
         >
@@ -124,13 +174,14 @@ const drawerList = (
             primary={page.label}
             primaryTypographyProps={{
               fontWeight: 600,
+              fontSize: '1.1rem',
               color: '#E2E8F0'
             }}
           />
         </ListItem>
       ))}
     </List>
-    <Box sx={{ px: 3, mt: 'auto', pb: 3 }}>
+    <Box sx={{ px: 3, mt: 'auto', pb: 4, position: 'relative', zIndex: 1 }}>
       <Box sx={{ 
         p: 2, 
         borderRadius: 2, 
@@ -160,16 +211,20 @@ const drawerList = (
 
   return (
     <AppBar 
-      position="sticky" 
-      elevation={scrolled ? 4 : 0}
+      position="fixed" 
+      elevation={scrolled ? 4 : 1}
       sx={{ 
-        background: scrolled 
-          ? 'rgba(255, 255, 255, 0.95)' 
-          : 'rgba(255, 255, 255, 0.98)',
+        background: 'rgba(255, 255, 255, 0.98)',
         backdropFilter: 'blur(10px)',
-        borderBottom: scrolled ? 'none' : '1px solid rgba(62, 196, 185, 0.1)',
+        borderBottom: '1px solid rgba(62, 196, 185, 0.1)',
         transition: 'all 0.3s ease',
-        boxShadow: scrolled ? '0 4px 20px rgba(62, 196, 185, 0.15)' : 'none',
+        boxShadow: scrolled 
+          ? '0 4px 20px rgba(62, 196, 185, 0.15)' 
+          : '0 1px 3px rgba(0, 0, 0, 0.05)',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1100,
       }}
     >
       <Toolbar sx={{ 
@@ -192,7 +247,9 @@ const drawerList = (
               transform: 'scale(1.02)',
             }
           }} 
-          onClick={() => navigate("/")}
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         >
           <img 
             src={logo} 
@@ -308,7 +365,15 @@ const drawerList = (
                 sx: {
                   background: 'transparent',
                   boxShadow: 'none',
+                  width: '100%',
                 }
+              }}
+              transitionDuration={{
+                enter: 400,
+                exit: 300,
+              }}
+              SlideProps={{
+                direction: 'left',
               }}
             >
               {drawerList}
