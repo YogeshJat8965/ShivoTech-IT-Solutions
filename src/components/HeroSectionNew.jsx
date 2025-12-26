@@ -173,8 +173,6 @@ const HeroSection = () => {
                   border: "1px solid rgba(255, 255, 255, 0.2)",
                   color: "#fff",
                   animation: "glow 2s ease-in-out infinite",
-                  cursor: "default",
-                  pointerEvents: "none",
                   "& .MuiChip-icon": {
                     color: theme.palette.secondary.main,
                   },
@@ -548,7 +546,7 @@ const HeroSection = () => {
             }}
           >
             {[
-              { label: "Fresh & Innovative", sublabel: "Modern Solutions" },
+              { label: "Industry Leading", sublabel: "Top 1% Agency" },
               { label: "Fast Delivery", sublabel: "On-Time Always" },
               { label: "24/7 Support", sublabel: "We're Here For You" },
               { label: "Best Pricing", sublabel: "Quality + Value" },
