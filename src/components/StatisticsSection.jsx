@@ -130,21 +130,19 @@ const StatisticsSection = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                   style={{ 
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
+                    width: "280px",
+                    maxWidth: "100%",
                   }}
                 >
                   <Box
                     sx={{
-                      width: { xs: "100%", sm: "280px" },
-                      maxWidth: "280px",
+                      width: "280px",
                       height: "280px",
                       p: 4,
                       textAlign: "center",
                       background: "rgba(30,58,138,0.4)",
                       backdropFilter: "blur(10px)",
-                      borderRadius: 4,
+                      borderRadius: 0,
                       border: "1px solid rgba(255,255,255,0.15)",
                       display: "flex",
                       flexDirection: "column",
@@ -170,7 +168,7 @@ const StatisticsSection = () => {
                         sx={{
                           width: 70,
                           height: 70,
-                          borderRadius: 2,
+                          borderRadius: 0,
                           background: `${stat.color}22`,
                           display: "flex",
                           alignItems: "center",
