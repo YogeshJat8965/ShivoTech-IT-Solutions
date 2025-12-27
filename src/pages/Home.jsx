@@ -6,6 +6,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import TestimonialsSection from "../components/TestimonialsSection";
 import OurTeam from "../components/OurTeam";
 import BlogSection from "../components/BlogSection";
+import OurWorkSection from "../components/OurWorkSection";
 import ContactUsSection from "../components/ContactUsSection";
 import Footer from "../components/Footer";
 
@@ -15,6 +16,7 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <OurWorkSection />
       <WhyChooseUs />
       {/* <TestimonialsSection /> */}
       <OurTeam />

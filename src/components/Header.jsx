@@ -24,10 +24,10 @@ import logo from "../assets/images/ShivoTech IT Solutions.png";
 
 const pages = [
   { label: "Home", link: "/" },
-  { label: "About", link: "#about" },
-  { label: "Services", link: "#services" },
-  // { label: "Blog", link: "#blog" },
-  { label: "Contact", link: "#contact" },
+  { label: "About", link: "/about" },
+  { label: "Services", link: "/services" },
+  { label: "Our Work", link: "/our-work" },
+  { label: "Contact", link: "/contact" },
 ];
 
 export default function Header() {
@@ -87,7 +87,13 @@ const drawerList = (
       }}
     >
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        <Box 
+          sx={{ display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer' }}
+          onClick={() => {
+            setDrawerOpen(false);
+            navigate('/');
+          }}
+        >
           <img 
             src={logo} 
             alt="ShivoTech" 
@@ -225,6 +231,7 @@ const drawerList = (
         left: 0,
         right: 0,
         zIndex: 1100,
+        borderRadius: 0,
       }}
     >
       <Toolbar sx={{ 
@@ -243,24 +250,61 @@ const drawerList = (
             alignItems: 'center', 
             cursor: 'pointer',
             transition: 'transform 0.3s ease',
+            gap: 1.5,
             '&:hover': {
               transform: 'scale(1.02)',
             }
           }} 
           onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            navigate('/');
           }}
         >
           <img 
             src={logo} 
             alt="ShivoTech IT Solutions Logo" 
             style={{ 
-              width: scrolled ? 90 : 100, 
-              height: scrolled ? 60 : 70, 
+              width: 110, 
+              height: 75, 
               padding: 5,
               transition: 'all 0.3s ease',
             }}  
           />
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'flex' },
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                fontSize: { sm: scrolled ? '1.1rem' : '1.2rem', md: scrolled ? '1.2rem' : '1.3rem' },
+                background: 'linear-gradient(135deg, #3EC4B9 0%, #2A9D8F 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                transition: 'all 0.3s ease',
+                lineHeight: 1.2,
+                mb: -0.5,
+              }}
+            >
+              ShivoTech
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                fontWeight: 600,
+                fontSize: { sm: '0.7rem', md: scrolled ? '0.75rem' : '0.8rem' },
+                color: '#64748B',
+                transition: 'all 0.3s ease',
+                letterSpacing: '0.5px',
+              }}
+            >
+              IT Solutions
+            </Typography>
+          </Box>
         </Box>
 
         {/* Desktop Nav */}

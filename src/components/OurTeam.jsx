@@ -27,19 +27,6 @@ const teamMembers = [
     // linkedin: "https://linkedin.com/in/raviverma",
   },
   {
-    name: "Prashant Patel",
-    role: "Markeing Head & Digital Strategist",
-    image: prashant,
-    bio: "Leads our growth strategy through digital marketing and SEO.",
-    // linkedin: "https://linkedin.com/in/anjalisharma",
-  },
-  {
-    name: "Ishika Patel",
-    role: "Content Creator & SEO Specialist",
-    image: "/images/team3.jpg",
-    bio: "Leads our growth strategy through digital marketing and SEO.",
-  },
-  {
     name: "Mukesh Tak",
     role: "Full Stack Developer",
     image: "/images/team4.jpg",
@@ -53,6 +40,12 @@ const teamMembers = [
     bio: "Expert in building scalable web applications and leading technical teams.",
     // linkedin: "https://linkedin.com/in/yogeshjat",
     // github: "https://github.com/YogeshJat8965",
+  },
+  {
+    name: "Aprna Singh",
+    role: "Marketing & Operation Head",
+    image: "/images/aprna.jpg",
+    bio: "Oversees marketing strategies and operational excellence.",
   },
 ];
 
