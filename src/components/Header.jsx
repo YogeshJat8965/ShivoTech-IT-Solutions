@@ -147,7 +147,7 @@ const drawerList = (
           }}
           sx={{
             borderRadius: 0,
-            mb: 2,
+            mb: 1,
             py: 1.5,
             transition: 'all 0.3s ease',
             animation: `slideInRight 0.5s ease-out ${index * 0.1}s backwards`,
