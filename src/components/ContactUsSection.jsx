@@ -50,7 +50,7 @@ const ContactUsSection = () => {
       return;
     }
 
-    const phoneNumber = "919981255949"; // ✅ Add your WhatsApp number here
+    const phoneNumber = "917805058023"; // ✅ Add your WhatsApp number here
     const text = `Hello ShivoTech Team! 👋\n\nI have a query:\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n*Message:* ${message}`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 

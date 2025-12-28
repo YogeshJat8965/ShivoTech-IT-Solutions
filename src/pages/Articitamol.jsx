@@ -46,7 +46,7 @@ const Articitamol = () => {
       return;
     }
 
-    const whatsappNumber = "917509111934"; 
+    const whatsappNumber = "917805058023"; 
     const message = `*New Book Pre-Booking* 📚\n\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nAddress: ${address}\nPostal Code: ${postalCode}\n\n*Please pay the booking amount and send the screenshot!*`;
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

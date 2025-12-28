@@ -33,15 +33,15 @@ const contactInfo = [
   {
     icon: <PhoneIcon sx={{ fontSize: 35 }} />,
     title: "Call Us",
-    content: "+91 9981255949",
-    link: "tel:+919981255949",
+    content: "+91 78050 58023",
+    link: "tel:+917805058023",
     color: "#F59E0B",
   },
   {
     icon: <WhatsAppIcon sx={{ fontSize: 35 }} />,
     title: "WhatsApp",
-    content: "+91 9981255949",
-    link: "https://wa.me/919981255949",
+    content: "+91 78050 58023",
+    link: "https://wa.me/917805058023",
     color: "#25D366",
   },
 ];
@@ -77,7 +77,7 @@ const ContactUs = () => {
       return;
     }
 
-    const phoneNumber = "919981255949";
+    const phoneNumber = "917805058023";
     const text = `Hello ShivoTech Team! 👋\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || "Not provided"}\n*Subject:* ${subject || "General Inquiry"}\n*Message:* ${message}`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 
@@ -467,7 +467,7 @@ const ContactUs = () => {
                     Chat with us on WhatsApp for instant support!
                   </Typography>
                   <IconButton
-                    href="https://wa.me/919981255949"
+                    href="https://wa.me/917805058023"
                     target="_blank"
                     sx={{
                       width: 60,
