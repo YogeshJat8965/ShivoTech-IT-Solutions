@@ -19,6 +19,7 @@ const AboutSection = () => {
     { icon: <PeopleIcon />, number: "180+", label: "Clients", color: "#F59E0B" },
     { icon: <TrendingUpIcon />, number: "85%", label: "Growth", color: "#8B5CF6" },
     { icon: <EmojiEventsIcon />, number: "95%", label: "Success", color: "#EF4444" },
+    { icon: <RocketLaunchIcon />, number: "3+", label: "Years", color: "#10B981" },
   ];
 
   return (
@@ -84,6 +85,7 @@ const AboutSection = () => {
             sx={{ 
               color: "primary.main", 
               fontWeight: 700,
+              fontSize: { xs: "1.5rem", md: "1.75rem" },
               position: "relative",
               display: "inline-block",
               "&::after": {
@@ -104,9 +106,12 @@ const AboutSection = () => {
 
           <Typography
             variant="body1"
-            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8 }}
+            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8, fontSize: "1.1rem" }}
           >
-            At <strong>ShivoTech IT Solutions</strong>, we specialize in
+            At <strong>
+              <Box component="span" sx={{ color: '#092e5c' }}>Shivo</Box>
+              <Box component="span" sx={{ color: '#3EC4B9' }}>Tech</Box> IT Solutions
+            </strong>, we specialize in
             creating impactful digital experiences that empower businesses to
             grow. From custom website development and result-driven SEO to
             digital marketing strategies and brand-centric designs, we make sure
@@ -115,21 +120,55 @@ const AboutSection = () => {
 
           <Typography
             variant="body1"
-            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8 }}
+            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8, fontSize: "1.1rem" }}
           >
             Our passionate team thrives on innovation, creativity, and delivering
             measurable results. We don’t just build websites — we craft digital
             solutions that help your business achieve long-term success.
           </Typography>
 
-          <AppButton
-            variant="contained"
-            color="primary"
-            sx={{ mt: 3 }}
-            href="#services"
+          <Box
+            sx={{
+              mt: 3,
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: { xs: "center", sm: "center" },
+              gap: 2,
+            }}
           >
-            Explore Our Services
-          </AppButton>
+            <AppButton
+              variant="contained"
+              color="primary"
+              href="#services"
+            >
+              Explore Our Services
+            </AppButton>
+
+            {/* Years Badge */}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                px: 3,
+                py: 1.5,
+                borderRadius: 3,
+                background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+                boxShadow: "0px 8px 24px rgba(16, 185, 129, 0.3)",
+                color: "white",
+              }}
+            >
+              <RocketLaunchIcon sx={{ fontSize: 24 }} />
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "1.1rem",
+                }}
+              >
+                3+ Years Experience
+              </Typography>
+            </Box>
+          </Box>
         </Box>
 
         {/* Right Image */}
@@ -158,26 +197,6 @@ const AboutSection = () => {
               }
             }}
           />
-          {/* Floating Badge */}
-          <Box
-            data-aos="zoom-in"
-            data-aos-delay="500"
-            sx={{
-              position: "absolute",
-              bottom: 20,
-              right: 20,
-              backgroundColor: "secondary.main",
-              color: "white",
-              px: 3,
-              py: 2,
-              borderRadius: 3,
-              boxShadow: "0px 8px 24px rgba(245, 158, 11, 0.4)",
-              fontWeight: 700,
-              fontSize: "1.1rem",
-            }}
-          >
-            5+ Years
-          </Box>
         </Box>
       </Box>
     </Box>

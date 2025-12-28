@@ -164,7 +164,7 @@ const ServicesSection = () => {
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
-        gap={4}
+        gap={3}
         mt={4}
         maxWidth={1400}
         mx="auto"
@@ -183,8 +183,8 @@ const ServicesSection = () => {
               transition: { duration: 0.3, ease: "easeOut" }
             }}
             style={{
-              flex: "0 0 calc(50% - 16px)",
-              maxWidth: 500,
+              flex: "1 1 calc(25% - 24px)",
+              maxWidth: "calc(25% - 24px)",
               minWidth: 280,
             }}
           >

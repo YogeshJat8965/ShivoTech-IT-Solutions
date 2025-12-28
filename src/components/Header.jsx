@@ -20,7 +20,8 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/images/ShivoTech IT Solutions.png";
+import logo from "../assets/images/logo.png";
+import { color } from 'framer-motion';
 
 const pages = [
   { label: "Home", link: "/" },
@@ -200,7 +201,7 @@ const drawerList = (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
           <PhoneIcon sx={{ fontSize: 16, color: '#3EC4B9' }} />
           <Typography variant="body2" sx={{ color: '#3EC4B9', fontWeight: 600 }}>
-            +91 9876543210
+            +91 78050 58023
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -263,8 +264,8 @@ const drawerList = (
             src={logo} 
             alt="ShivoTech IT Solutions Logo" 
             style={{ 
-              width: 110, 
-              height: 75, 
+              width: 100, 
+              height: 100, 
               padding: 5,
               transition: 'all 0.3s ease',
             }}  
@@ -280,17 +281,14 @@ const drawerList = (
               variant="h6"
               sx={{
                 fontWeight: 700,
-                fontSize: { sm: scrolled ? '1.1rem' : '1.2rem', md: scrolled ? '1.2rem' : '1.3rem' },
-                background: 'linear-gradient(135deg, #3EC4B9 0%, #2A9D8F 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                fontSize: { sm: scrolled ? '1.1rem' : '1.2rem', md: scrolled ? '1.5rem' : '1.5rem' },
                 transition: 'all 0.3s ease',
                 lineHeight: 1.2,
                 mb: -0.5,
               }}
             >
-              ShivoTech
+              <span style={{ color: '#092e5c' }}>Shivo</span>
+              <span style={{ color: '#3EC4B9' }}>Tech</span>
             </Typography>
             <Typography
               variant="caption"
@@ -361,7 +359,7 @@ const drawerList = (
             {/* CTA Button */}
             <Button
               variant="contained"
-              href="#contact"
+              onClick={() => navigate('/contact')}
               startIcon={<RocketLaunchIcon />}
               sx={{
                 ml: 2,

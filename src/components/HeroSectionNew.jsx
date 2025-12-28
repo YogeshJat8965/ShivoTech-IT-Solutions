@@ -212,7 +212,7 @@ const HeroSection = () => {
                   mb: 2,
                 }}
               >
-                We specialize in:{" "}
+                We specialize in:&nbsp;&nbsp;
                 <Box
                   component="span"
                   sx={{

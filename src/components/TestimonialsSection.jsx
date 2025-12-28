@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Container,
   Typography,
   Paper,
   Avatar,
@@ -132,7 +131,7 @@ const TestimonialsSection = () => {
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <Box sx={{ position: "relative", zIndex: 1, maxWidth: 1400, mx: "auto", px: 4 }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -158,7 +157,7 @@ const TestimonialsSection = () => {
               sx={{
                 fontWeight: 900,
                 mb: 2,
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
                 color: "#fff",
               }}
             >
@@ -180,7 +179,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Testimonial Slider */}
-        <Box sx={{ position: "relative", minHeight: { xs: "500px", md: "400px" } }}>
+        <Box sx={{ position: "relative", minHeight: { xs: "500px", md: "400px" }, maxWidth: 1200, mx: "auto" }}>
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
@@ -195,7 +194,7 @@ const TestimonialsSection = () => {
                 scale: { duration: 0.3 },
               }}
               style={{
-                position: "absolute",
+                position: "relative",
                 width: "100%",
               }}
             >
@@ -208,7 +207,7 @@ const TestimonialsSection = () => {
                   backdropFilter: "blur(20px)",
                   border: "1px solid rgba(255,255,255,0.2)",
                   position: "relative",
-                  overflow: "hidden",
+                  overflow: "visible",
                 }}
               >
                 {/* Quote Icon */}
@@ -304,31 +303,35 @@ const TestimonialsSection = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Fixed outside animation */}
           <Box
             sx={{
               position: "absolute",
               top: "50%",
-              left: 0,
-              right: 0,
+              left: { xs: -50, md: -80 },
+              right: { xs: -50, md: -80 },
               transform: "translateY(-50%)",
               display: "flex",
               justifyContent: "space-between",
-              px: { xs: 0, md: -8 },
               pointerEvents: "none",
+              zIndex: 10,
             }}
           >
             <IconButton
               onClick={handlePrev}
               sx={{
-                background: "rgba(62, 196, 185, 0.2)",
+                background: "rgba(62, 196, 185, 0.9)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(62, 196, 185, 0.3)",
-                color: "#3EC4B9",
+                border: "2px solid rgba(62, 196, 185, 1)",
+                color: "#fff",
+                width: 56,
+                height: 56,
                 pointerEvents: "all",
+                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
                 "&:hover": {
-                  background: "rgba(62, 196, 185, 0.3)",
+                  background: "rgba(62, 196, 185, 1)",
                   transform: "scale(1.1)",
+                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
                 },
               }}
             >
@@ -337,14 +340,18 @@ const TestimonialsSection = () => {
             <IconButton
               onClick={handleNext}
               sx={{
-                background: "rgba(62, 196, 185, 0.2)",
+                background: "rgba(62, 196, 185, 0.9)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(62, 196, 185, 0.3)",
-                color: "#3EC4B9",
+                border: "2px solid rgba(62, 196, 185, 1)",
+                color: "#fff",
+                width: 56,
+                height: 56,
                 pointerEvents: "all",
+                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
                 "&:hover": {
-                  background: "rgba(62, 196, 185, 0.3)",
+                  background: "rgba(62, 196, 185, 1)",
                   transform: "scale(1.1)",
+                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
                 },
               }}
             >
@@ -356,7 +363,7 @@ const TestimonialsSection = () => {
           <Box
             sx={{
               position: "absolute",
-              bottom: -60,
+              bottom: -80,
               left: "50%",
               transform: "translateX(-50%)",
               display: "flex",
@@ -389,7 +396,7 @@ const TestimonialsSection = () => {
             ))}
           </Box>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

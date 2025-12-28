@@ -143,7 +143,7 @@ const ContactUsSection = () => {
           flexDirection: isMobile ? "column" : "row",
           gap: 4,
           justifyContent: "center",
-          maxWidth: 1200,
+          maxWidth: 1400,
           mx: "auto",
         }}
         data-aos="fade-up"
@@ -321,7 +321,7 @@ const ContactUsSection = () => {
                   >
                     <EmailIcon sx={{ color: "secondary.main", fontSize: 22 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>contact@shivotech.com</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>shivotechit@gmail.com </Typography>
                 </Stack>
               </motion.div>
 
@@ -363,7 +363,7 @@ const ContactUsSection = () => {
                   >
                     <EmailIcon sx={{ color: "secondary.main", fontSize: 22 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>shivotech@gmail.com</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>info@shivotechitsolutions.com</Typography>
                 </Stack>
               </motion.div>
 
@@ -405,7 +405,7 @@ const ContactUsSection = () => {
                   >
                     <PhoneIcon sx={{ color: "secondary.main", fontSize: 22 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>+91 99812 55949</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>+91 78050 58023</Typography>
                 </Stack>
               </motion.div>
             </Paper>

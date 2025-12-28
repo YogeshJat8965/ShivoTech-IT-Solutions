@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Paper, Button, Grid, Chip } from "@mui/material";
+import { Box, Typography, Paper, Button, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import LaunchIcon from "@mui/icons-material/Launch";
@@ -61,7 +61,7 @@ const OurWorkSection = () => {
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <Box sx={{ position: "relative", zIndex: 1, maxWidth: 1400, mx: "auto", px: 4 }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -86,7 +86,7 @@ const OurWorkSection = () => {
               sx={{
                 fontWeight: 900,
                 mb: 2,
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
                 background: "linear-gradient(135deg, #1E293B 0%, #3EC4B9 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -112,14 +112,30 @@ const OurWorkSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <Grid container spacing={4} sx={{ mb: 6 }}>
+        <Box 
+          sx={{ 
+            display: "flex", 
+            flexWrap: "wrap", 
+            gap: 3, 
+            mb: 6,
+            justifyContent: "center"
+          }}
+        >
           {featuredProjects.map((project, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Box 
+              key={index}
+              sx={{
+                flex: "1 1 calc(33.333% - 16px)",
+                minWidth: { xs: "100%", md: "300px" },
+                maxWidth: { xs: "100%", md: "calc(33.333% - 16px)" }
+              }}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                style={{ height: "100%" }}
               >
                 <Paper
                   elevation={3}
@@ -214,9 +230,9 @@ const OurWorkSection = () => {
                   </Button>
                 </Paper>
               </motion.div>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
 
         {/* CTA Button */}
         <motion.div
@@ -252,7 +268,7 @@ const OurWorkSection = () => {
             </Button>
           </Box>
         </motion.div>
-      </Container>
+      </Box>
     </Box>
   );
 };

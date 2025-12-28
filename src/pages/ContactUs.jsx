@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Container,
   Typography,
   Paper,
   TextField,
@@ -27,8 +26,8 @@ const contactInfo = [
   {
     icon: <EmailIcon sx={{ fontSize: 35 }} />,
     title: "Email Us",
-    content: "contact@shivotech.com",
-    link: "mailto:contact@shivotech.com",
+    content: "shivotechit@gmail.com ",
+    link: "mailto:shivotechit@gmail.com ",
     color: "#3EC4B9",
   },
   {
@@ -115,7 +114,7 @@ const ContactUs = () => {
           }}
         />
 
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Box sx={{ position: "relative", zIndex: 2, maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -147,11 +146,11 @@ const ContactUs = () => {
               Have a project in mind? Let's discuss how we can help you achieve your goals.
             </Typography>
           </motion.div>
-        </Container>
+        </Box>
       </Box>
 
       {/* Contact Info Cards */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 }, mt: { xs: -6, md: -8 } }}>
+      <Box sx={{ py: { xs: 8, md: 10 }, maxWidth: 1400, mx: "auto", px: 4 }}>
         <Grid container spacing={4} sx={{ mb: { xs: 6, md: 10 } }} justifyContent="center">
           {contactInfo.map((info, index) => (
             <Grid 
@@ -493,7 +492,7 @@ const ContactUs = () => {
             </motion.div>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
 
       <Footer />
     </Box>

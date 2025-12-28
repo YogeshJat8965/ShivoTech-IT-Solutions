@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid, Button, Container, Paper, Stack, Divider, Chip } from "@mui/material";
+import { Box, Typography, Grid, Button, Paper, Stack, Divider, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
@@ -113,7 +113,7 @@ const AboutUs = () => {
           }}
         />
 
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Box sx={{ position: "relative", zIndex: 2, maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,11 +159,11 @@ const AboutUs = () => {
               We help businesses grow through cutting-edge design, web development, SEO and digital strategy.
             </Typography>
           </motion.div>
-        </Container>
+        </Box>
       </Box>
 
       {/* Our Story Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, maxWidth: 1400, mx: "auto", px: 4 }}>
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
             <motion.div
@@ -192,7 +192,7 @@ const AboutUs = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                ShivoTech IT Solutions was founded with a simple yet powerful vision: to empower businesses through innovative digital solutions. What started as a small team of passionate developers has grown into a full-service digital agency.
+                <Box component="span" sx={{ color: '#092e5c', fontWeight: 600 }}>Shivo</Box><Box component="span" sx={{ color: '#3EC4B9', fontWeight: 600 }}>Tech</Box> IT Solutions was founded with a simple yet powerful vision: to empower businesses through innovative digital solutions. What started as a small team of passionate developers has grown into a full-service digital agency.
               </Typography>
               <Typography
                 variant="body1"
@@ -339,7 +339,7 @@ const AboutUs = () => {
             </motion.div>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
 
       {/* Why Choose Us Section */}
       <Box
@@ -349,7 +349,7 @@ const AboutUs = () => {
           px: 4,
         }}
       >
-        <Container maxWidth="lg">
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -383,16 +383,20 @@ const AboutUs = () => {
             </Typography>
           </motion.div>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 3,
+              justifyContent: "center",
+            }}
+          >
             {whyChooseUs.map((item, index) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={6} 
-                md={6} 
-                lg={3} 
+              <Box
                 key={index}
                 sx={{
+                  flex: "1 1 calc(25% - 24px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(25% - 24px)" },
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -404,7 +408,6 @@ const AboutUs = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   style={{
                     width: "100%",
-                    maxWidth: "320px",
                   }}
                 >
                   <Paper
@@ -490,10 +493,10 @@ const AboutUs = () => {
                     </Box>
                   </Paper>
                 </motion.div>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
-        </Container>
+          </Box>
+        </Box>
       </Box>
 
       {/* Our Values */}
@@ -504,7 +507,7 @@ const AboutUs = () => {
           px: 4,
         }}
       >
-        <Container maxWidth="lg">
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -538,16 +541,20 @@ const AboutUs = () => {
             </Typography>
           </motion.div>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 3,
+              justifyContent: "center",
+            }}
+          >
             {values.map((value, index) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={6} 
-                md={6} 
-                lg={3} 
+              <Box
                 key={index}
                 sx={{
+                  flex: "1 1 calc(25% - 24px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(25% - 24px)" },
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -559,7 +566,6 @@ const AboutUs = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   style={{
                     width: "100%",
-                    maxWidth: "300px",
                     display: "flex",
                   }}
                 >
@@ -606,10 +612,10 @@ const AboutUs = () => {
                     </Typography>
                   </Paper>
                 </motion.div>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
-        </Container>
+          </Box>
+        </Box>
       </Box>
 
       {/* Team Section */}
@@ -624,7 +630,7 @@ const AboutUs = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -676,7 +682,7 @@ const AboutUs = () => {
               Contact Us Today
             </Button>
           </motion.div>
-        </Container>
+        </Box>
       </Box>
 
       <Footer />

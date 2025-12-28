@@ -54,13 +54,13 @@ const features = [
 const stats = [
   {
     icon: <WorkIcon sx={{ fontSize: 50, color: "secondary.main" }} />,
-    number: 250,
+    number: 20,
     suffix: "+",
     label: "Projects Completed",
   },
   {
     icon: <PeopleIcon sx={{ fontSize: 50, color: "#3B82F6" }} />,
-    number: 180,
+    number: 18,
     suffix: "+",
     label: "Happy Clients",
   },
@@ -72,9 +72,21 @@ const stats = [
   },
   {
     icon: <EmojiEventsIcon sx={{ fontSize: 50, color: "#F59E0B" }} />,
-    number: 5,
+    number: 7,
     suffix: "+",
     label: "Years Experience",
+  },
+  {
+    icon: <VerifiedIcon sx={{ fontSize: 50, color: "#8B5CF6" }} />,
+    number: 100,
+    suffix: "%",
+    label: "Quality Assurance",
+  },
+  {
+    icon: <SpeedIcon sx={{ fontSize: 50, color: "#06B6D4" }} />,
+    number: 99,
+    suffix: "%",
+    label: "On-Time Delivery",
   },
 ];
 
@@ -131,6 +143,7 @@ const WhyChooseUs = () => {
               fontWeight: 800,
               mb: 2,
               textAlign: "center",
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" }
             }}
             data-aos="fade-up"
           >
@@ -152,62 +165,76 @@ const WhyChooseUs = () => {
             Results that speak louder than words
           </Typography>
 
-          <Box sx={{ width: "100%", overflow: "hidden" }}>
-            <Grid container spacing={4} justifyContent="center">
-              {stats.map((stat, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
-                  <Box
+          <Box 
+            sx={{ 
+              display: "flex", 
+              flexWrap: "wrap", 
+              gap: 3, 
+              justifyContent: "center",
+              width: "100%"
+            }}
+          >
+            {stats.map((stat, index) => (
+              <Box
+                key={index}
+                sx={{
+                  flex: "1 1 calc(16.666% - 20px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "150px" },
+                  maxWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(16.666% - 20px)" }
+                }}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <Box
+                  sx={{
+                    textAlign: "center",
+                    p: { xs: 3, md: 5 },
+                    borderRadius: 4,
+                    background: "rgba(255, 255, 255, 0.08)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.15)",
+                    transition: "all 0.4s ease",
+                    height: "100%",
+                    "&:hover": {
+                      background: "rgba(255, 255, 255, 0.12)",
+                      transform: "translateY(-8px)",
+                      border: "1px solid rgba(245, 158, 11, 0.5)",
+                    },
+                  }}
+                >
+                  <Box sx={{ mb: 2 }}>{stat.icon}</Box>
+                  <Typography
+                    variant="h2"
                     sx={{
-                      textAlign: "center",
-                      p: { xs: 3, md: 4 },
-                      borderRadius: 4,
-                      background: "rgba(255, 255, 255, 0.08)",
-                      backdropFilter: "blur(10px)",
-                      border: "1px solid rgba(255, 255, 255, 0.15)",
-                      transition: "all 0.4s ease",
-                      "&:hover": {
-                        background: "rgba(255, 255, 255, 0.12)",
-                        transform: "translateY(-8px)",
-                        border: "1px solid rgba(245, 158, 11, 0.5)",
-                      },
+                      color: "#FCD34D",
+                      fontWeight: 900,
+                      mb: 1,
+                      fontSize: { xs: "2.5rem", md: "4rem" },
+                      letterSpacing: "-0.02em",
                     }}
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
                   >
-                    <Box sx={{ mb: 2 }}>{stat.icon}</Box>
-                    <Typography
-                      variant="h2"
-                      sx={{
-                        color: "#FCD34D",
-                        fontWeight: 900,
-                        mb: 1,
-                        fontSize: { xs: "2.5rem", md: "4rem" },
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      {inView ? (
-                        <>
-                          <CountUp end={stat.number} duration={2.5} />
-                          {stat.suffix}
-                        </>
-                      ) : (
-                        "0" + stat.suffix
-                      )}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "rgba(255, 255, 255, 0.85)",
-                        fontWeight: 500,
-                        fontSize: { xs: "0.875rem", md: "1rem" },
-                      }}
-                    >
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
+                    {inView ? (
+                      <>
+                        <CountUp end={stat.number} duration={2.5} />
+                        {stat.suffix}
+                      </>
+                    ) : (
+                      "0" + stat.suffix
+                    )}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "rgba(255, 255, 255, 0.85)",
+                      fontWeight: 500,
+                      fontSize: { xs: "0.875rem", md: "1rem" },
+                    }}
+                  >
+                    {stat.label}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>
@@ -221,7 +248,7 @@ const WhyChooseUs = () => {
           position: "relative",
         }}
       >
-        <Box sx={{ maxWidth: 1400, mx: "auto" }}>
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <Typography
             variant="h3"
             sx={{
@@ -229,10 +256,11 @@ const WhyChooseUs = () => {
               fontWeight: 800,
               mb: 2,
               textAlign: "center",
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" }
             }}
             data-aos="fade-up"
           >
-            Why Choose ShivoTech?
+            Why Choose <Box component="span" sx={{ color: '#092e5c' }}>Shivo</Box><Box component="span" sx={{ color: '#3EC4B9' }}>Tech</Box>?
           </Typography>
           <Typography
             variant="subtitle1"
@@ -249,88 +277,101 @@ const WhyChooseUs = () => {
           >
             We combine expertise, innovation, and dedication to deliver exceptional results
           </Typography>
-          <Box sx={{ width: "100%", overflow: "hidden" }}>
-            <Grid container spacing={4} justifyContent="center">
-              {features.map((feature, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
+          <Box 
+            sx={{ 
+              display: "flex", 
+              flexWrap: "wrap", 
+              gap: 3, 
+              justifyContent: "center",
+              width: "100%"
+            }}
+          >
+            {features.map((feature, index) => (
+              <Box
+                key={index}
+                sx={{
+                  flex: "1 1 calc(16.666% - 20px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "150px" },
+                  maxWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(16.666% - 20px)" }
+                }}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <Box
+                  sx={{
+                    p: 4,
+                    height: "100%",
+                    background: "#fff",
+                    borderRadius: 3,
+                    border: "2px solid",
+                    borderColor: "grey.100",
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    position: "relative",
+                    overflow: "hidden",
+                    "&:hover": {
+                      transform: "translateY(-10px)",
+                      borderColor: feature.color,
+                      boxShadow: `0 20px 50px ${feature.color}25`,
+                      "&::before": {
+                        opacity: 1,
+                      },
+                    },
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: "5px",
+                      background: `linear-gradient(90deg, ${feature.color}, ${feature.color}80)`,
+                      opacity: 0,
+                      transition: "opacity 0.4s ease",
+                    },
+                  }}
+                >
                   <Box
                     sx={{
-                      p: 4,
-                      height: "100%",
-                      background: "#fff",
+                      width: 70,
+                      height: 70,
                       borderRadius: 3,
-                      border: "2px solid",
-                      borderColor: "grey.100",
-                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                      position: "relative",
-                      overflow: "hidden",
-                      "&:hover": {
-                        transform: "translateY(-10px)",
-                        borderColor: feature.color,
-                        boxShadow: `0 20px 50px ${feature.color}25`,
-                        "&::before": {
-                          opacity: 1,
-                        },
-                      },
-                      "&::before": {
-                        content: '""',
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: "5px",
-                        background: `linear-gradient(90deg, ${feature.color}, ${feature.color}80)`,
-                        opacity: 0,
-                        transition: "opacity 0.4s ease",
+                      background: `linear-gradient(135deg, ${feature.color}15, ${feature.color}05)`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mb: 3,
+                      color: feature.color,
+                      transition: "all 0.4s ease",
+                      ".MuiBox-root:hover &": {
+                        transform: "scale(1.1) rotate(5deg)",
                       },
                     }}
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
                   >
-                    <Box
-                      sx={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: 3,
-                        background: `linear-gradient(135deg, ${feature.color}15, ${feature.color}05)`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        mb: 3,
-                        color: feature.color,
-                        transition: "all 0.4s ease",
-                        ".MuiBox-root:hover &": {
-                          transform: "scale(1.1) rotate(5deg)",
-                        },
-                      }}
-                    >
-                      {feature.icon}
-                    </Box>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        color: "text.primary",
-                        fontWeight: 700,
-                        mb: 2,
-                        fontSize: "1.25rem",
-                      }}
-                    >
-                      {feature.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "text.secondary",
-                        lineHeight: 1.8,
-                        fontSize: "0.95rem",
-                      }}
-                    >
-                      {feature.description}
-                    </Typography>
+                    {feature.icon}
                   </Box>
-                </Grid>
-              ))}
-            </Grid>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "text.primary",
+                      fontWeight: 700,
+                      mb: 2,
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    {feature.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "text.secondary",
+                      lineHeight: 1.8,
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    {feature.description}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>

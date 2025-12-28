@@ -234,7 +234,7 @@ const HeroSection = () => {
                     width: { xs: "100%", md: "auto" },
                   }}
                 >
-                  We specialize in:{" "}
+                  We specialize in: {"  "}
                 </Box>
                 <Box
                   component="span"

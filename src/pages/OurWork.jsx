@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Container,
   Typography,
   Paper,
   Button,
@@ -130,7 +129,7 @@ const OurWork = () => {
           }}
         />
 
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <Box sx={{ position: "relative", zIndex: 1, maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,17 +200,23 @@ const OurWork = () => {
           </motion.div>
 
           {/* Achievements */}
-          <Grid container spacing={3} sx={{ mt: 6 }} justifyContent="center">
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 3,
+              justifyContent: "center",
+              mt: 6,
+            }}
+          >
             {achievements.map((achievement, index) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={4} 
-                md={4} 
+              <Box
                 key={index}
                 sx={{
+                  flex: "1 1 calc(33.333% - 16px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(33.333% - 16px)" },
+                  maxWidth: "280px",
                   display: "flex",
-                  justifyContent: "center",
                 }}
               >
                 <motion.div
@@ -219,16 +224,15 @@ const OurWork = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   style={{
-                    width: "280px",
-                    maxWidth: "100%",
+                    width: "100%",
                   }}
                 >
                   <Paper
                     elevation={0}
                     sx={{
-                      p: 3,
+                      p: 2.5,
                       width: "100%",
-                      height: "200px",
+                      height: "160px",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
@@ -269,14 +273,14 @@ const OurWork = () => {
                     </Typography>
                   </Paper>
                 </motion.div>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
-        </Container>
+          </Box>
+        </Box>
       </Box>
 
       {/* Projects Grid */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, maxWidth: 1400, mx: "auto", px: 4 }}>
         <Grid container spacing={5}>
           {projects.map((project, index) => (
             <Grid item xs={12} key={project.id}>
@@ -291,7 +295,7 @@ const OurWork = () => {
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                   sx={{
-                    p: { xs: 4, md: 6 },
+                    p: { xs: 3, md: 4 },
                     borderRadius: 5,
                     position: "relative",
                     overflow: "hidden",
@@ -314,15 +318,15 @@ const OurWork = () => {
                     },
                   }}
                 >
-                  <Grid container spacing={4} alignItems="center">
+                  <Grid container spacing={3} alignItems="center">
                     {/* Icon & Category */}
                     <Grid item xs={12} md={3}>
                       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
                         <Box
                           sx={{
-                            width: 120,
-                            height: 120,
-                            borderRadius: 4,
+                            width: 90,
+                            height: 90,
+                            borderRadius: 3,
                             background: project.gradient,
                             display: "flex",
                             alignItems: "center",
@@ -335,7 +339,7 @@ const OurWork = () => {
                             transform: hoveredProject === project.id ? "rotate(5deg) scale(1.05)" : "rotate(0) scale(1)",
                           }}
                         >
-                          {project.icon}
+                          {React.cloneElement(project.icon, { sx: { fontSize: 40 } })}
                         </Box>
                         <Chip
                           label={project.category}
@@ -353,30 +357,30 @@ const OurWork = () => {
                     {/* Project Details */}
                     <Grid item xs={12} md={6}>
                       <Typography
-                        variant="h4"
+                        variant="h5"
                         sx={{
                           fontWeight: 800,
-                          mb: 2,
+                          mb: 1.5,
                           color: "primary.main",
-                          fontSize: { xs: "1.8rem", md: "2.2rem" },
+                          fontSize: { xs: "1.5rem", md: "1.8rem" },
                         }}
                       >
                         {project.title}
                       </Typography>
                       <Typography
-                        variant="body1"
+                        variant="body2"
                         sx={{
                           color: "text.secondary",
-                          mb: 3,
-                          lineHeight: 1.8,
-                          fontSize: "1.05rem",
+                          mb: 2,
+                          lineHeight: 1.7,
+                          fontSize: "0.95rem",
                         }}
                       >
                         {project.description}
                       </Typography>
 
                       {/* Tags */}
-                      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
+                      <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
                         {project.tags.map((tag, i) => (
                           <Chip
                             key={i}
@@ -568,7 +572,7 @@ const OurWork = () => {
             </Paper>
           </motion.div>
         </Box>
-      </Container>
+      </Box>
 
       <Footer />
     </Box>

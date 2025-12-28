@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
-  Container,
   Typography,
   Paper,
   Stack,
@@ -146,7 +145,7 @@ const Services = () => {
           }}
         />
         
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Box sx={{ position: "relative", zIndex: 2, maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -191,21 +190,26 @@ const Services = () => {
               From web development to digital marketing, we offer end-to-end services that drive growth and success.
             </Typography>
           </motion.div>
-        </Container>
+        </Box>
       </Box>
 
       {/* Services Grid */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-        <Grid container spacing={4} justifyContent="center">
+      <Box sx={{ py: { xs: 8, md: 12 }, maxWidth: 1400, mx: "auto", px: 4 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 3,
+            justifyContent: "center",
+          }}
+        >
           {services.map((service, index) => (
-            <Grid 
-              item 
-              xs={12} 
-              md={6} 
+            <Box
               key={index}
               sx={{
+                flex: "1 1 calc(50% - 12px)",
+                minWidth: { xs: "100%", md: "calc(50% - 12px)" },
                 display: "flex",
-                justifyContent: "center",
               }}
             >
               <motion.div
@@ -223,9 +227,9 @@ const Services = () => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   sx={{
-                    p: 5,
+                    p: 4,
                     width: "100%",
-                    minHeight: { xs: "auto", md: "650px" },
+                    minHeight: { xs: "auto", md: "520px" },
                     display: "flex",
                     flexDirection: "column",
                     borderRadius: 4,
@@ -254,29 +258,29 @@ const Services = () => {
                   {/* Icon */}
                   <Box
                     sx={{
-                      width: 90,
-                      height: 90,
+                      width: 70,
+                      height: 70,
                       borderRadius: 3,
                       background: service.gradient,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      mb: 3,
+                      mb: 2.5,
                       color: "#fff",
                       boxShadow: `0 8px 24px ${service.color}40`,
                       transform: hoveredIndex === index ? "scale(1.1) rotate(5deg)" : "scale(1)",
                       transition: "transform 0.3s ease",
                     }}
                   >
-                    {service.icon}
+                    {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
                   </Box>
 
                   {/* Title */}
                   <Typography
-                    variant="h4"
+                    variant="h5"
                     sx={{
                       fontWeight: 700,
-                      mb: 2,
+                      mb: 1.5,
                       color: "primary.main",
                     }}
                   >
@@ -285,18 +289,19 @@ const Services = () => {
 
                   {/* Description */}
                   <Typography
-                    variant="body1"
+                    variant="body2"
                     sx={{
                       color: "text.secondary",
-                      mb: 3,
+                      mb: 2.5,
                       lineHeight: 1.7,
+                      fontSize: "0.95rem",
                     }}
                   >
                     {service.description}
                   </Typography>
 
                   {/* Features */}
-                  <Stack spacing={1.5} mb={3}>
+                  <Stack spacing={1} mb={2.5}>
                     {service.features.map((feature, idx) => (
                       <Box
                         key={idx}
@@ -309,8 +314,8 @@ const Services = () => {
                           transitionDelay: `${idx * 0.05}s`,
                         }}
                       >
-                        <CheckCircleIcon sx={{ fontSize: 20, color: service.color }} />
-                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                        <CheckCircleIcon sx={{ fontSize: 18, color: service.color }} />
+                        <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.9rem" }}>
                           {feature}
                         </Typography>
                       </Box>
@@ -318,7 +323,7 @@ const Services = () => {
                   </Stack>
 
                   {/* Benefits */}
-                  <Stack direction="row" flexWrap="wrap" gap={1} mb={3}>
+                  <Stack direction="row" flexWrap="wrap" gap={0.8} mb={2.5}>
                     {service.benefits.map((benefit, idx) => (
                       <Chip
                         key={idx}
@@ -340,7 +345,7 @@ const Services = () => {
                   <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
-                    href="#contact"
+                    onClick={() => navigate('/contact')}
                     sx={{
                       background: service.gradient,
                       color: "#fff",
@@ -361,10 +366,10 @@ const Services = () => {
                   </Button>
                 </Paper>
               </motion.div>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
-      </Container>
+        </Box>
+      </Box>
 
       {/* Why Choose Us Section */}
       <Box
@@ -374,7 +379,7 @@ const Services = () => {
           px: 4,
         }}
       >
-        <Container maxWidth="lg">
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -391,7 +396,7 @@ const Services = () => {
                 color: "primary.main",
               }}
             >
-              Why Choose ShivoTech?
+              Why Choose <Box component="span" sx={{ color: '#092e5c' }}>Shivo</Box><Box component="span" sx={{ color: '#3EC4B9' }}>Tech</Box>?
             </Typography>
             <Typography
               variant="body1"
@@ -408,18 +413,21 @@ const Services = () => {
             </Typography>
           </motion.div>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 3,
+              justifyContent: "center",
+            }}
+          >
             {whyChooseUs.map((item, index) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={6} 
-                md={6}
-                lg={3} 
+              <Box
                 key={index}
                 sx={{
+                  flex: "1 1 calc(25% - 24px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(25% - 24px)" },
                   display: "flex",
-                  justifyContent: "center",
                 }}
               >
                 <motion.div
@@ -429,7 +437,6 @@ const Services = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   style={{
                     width: "100%",
-                    maxWidth: "300px",
                     display: "flex",
                   }}
                 >
@@ -475,10 +482,10 @@ const Services = () => {
                     </Typography>
                   </Paper>
                 </motion.div>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
-        </Container>
+          </Box>
+        </Box>
       </Box>
 
       {/* CTA Section */}
@@ -490,7 +497,7 @@ const Services = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -543,7 +550,7 @@ const Services = () => {
               Get a Free Consultation
             </Button>
           </motion.div>
-        </Container>
+        </Box>
       </Box>
 
       <Footer />
