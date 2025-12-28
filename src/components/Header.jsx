@@ -146,7 +146,7 @@ const drawerList = (
             }
           }}
           sx={{
-            borderRadius: 2,
+            borderRadius: 0,
             mb: 2,
             py: 1.5,
             transition: 'all 0.3s ease',
@@ -191,7 +191,7 @@ const drawerList = (
     <Box sx={{ px: 3, mt: 'auto', pb: 4, position: 'relative', zIndex: 1 }}>
       <Box sx={{ 
         p: 2, 
-        borderRadius: 2, 
+        borderRadius: 0, 
         background: 'rgba(62, 196, 185, 0.1)',
         border: '1px solid rgba(62, 196, 185, 0.2)',
       }}>
@@ -207,7 +207,7 @@ const drawerList = (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <EmailIcon sx={{ fontSize: 16, color: '#3EC4B9' }} />
           <Typography variant="body2" sx={{ color: '#3EC4B9', fontWeight: 600 }}>
-            info@shivotech.com
+            shivotechit@gmail.com 
           </Typography>
         </Box>
       </Box>
@@ -232,7 +232,6 @@ const drawerList = (
         left: 0,
         right: 0,
         zIndex: 1100,
-        borderRadius: 0,
       }}
     >
       <Toolbar sx={{ 

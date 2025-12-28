@@ -242,7 +242,7 @@ const WhyChooseUs = () => {
       {/* Why Choose Us Section */}
       <Box
         sx={{
-          px: 4,
+          px: { xs: 0, md: 4 },
           py: { xs: 8, md: 12 },
           backgroundColor: "background.default",
           position: "relative",

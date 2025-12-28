@@ -179,7 +179,63 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Testimonial Slider */}
-        <Box sx={{ position: "relative", minHeight: { xs: "500px", md: "400px" }, maxWidth: 1200, mx: "auto" }}>
+        <Box sx={{ position: "relative", minHeight: { xs: "550px", md: "400px" }, maxWidth: 1200, mx: "auto", px: { xs: 1.5, md: 0 } }}>
+          {/* Navigation Buttons - Fixed Position */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: { xs: "280px", sm: "250px", md: "50%" },
+              left: { xs: -28, md: -80 },
+              right: { xs: -28, md: -80 },
+              transform: { xs: "translateY(0)", md: "translateY(-50%)" },
+              display: "flex",
+              justifyContent: "space-between",
+              pointerEvents: "none",
+              zIndex: 10,
+            }}
+          >
+            <IconButton
+              onClick={handlePrev}
+              sx={{
+                background: "rgba(62, 196, 185, 0.9)",
+                backdropFilter: "blur(10px)",
+                border: { xs: "1px solid rgba(62, 196, 185, 1)", md: "2px solid rgba(62, 196, 185, 1)" },
+                color: "#fff",
+                width: { xs: 36, md: 56 },
+                height: { xs: 36, md: 56 },
+                pointerEvents: "all",
+                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
+                "&:hover": {
+                  background: "rgba(62, 196, 185, 1)",
+                  transform: "scale(1.1)",
+                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
+                },
+              }}
+            >
+              <ArrowBackIosNewIcon sx={{ fontSize: { xs: 16, md: 24 } }} />
+            </IconButton>
+            <IconButton
+              onClick={handleNext}
+              sx={{
+                background: "rgba(62, 196, 185, 0.9)",
+                backdropFilter: "blur(10px)",
+                border: { xs: "1px solid rgba(62, 196, 185, 1)", md: "2px solid rgba(62, 196, 185, 1)" },
+                color: "#fff",
+                width: { xs: 36, md: 56 },
+                height: { xs: 36, md: 56 },
+                pointerEvents: "all",
+                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
+                "&:hover": {
+                  background: "rgba(62, 196, 185, 1)",
+                  transform: "scale(1.1)",
+                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
+                },
+              }}
+            >
+              <ArrowForwardIosIcon sx={{ fontSize: { xs: 16, md: 24 } }} />
+            </IconButton>
+          </Box>
+
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
@@ -201,7 +257,7 @@ const TestimonialsSection = () => {
               <Paper
                 elevation={10}
                 sx={{
-                  p: { xs: 4, md: 6 },
+                  p: { xs: 3, sm: 4, md: 6 },
                   borderRadius: 5,
                   background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
                   backdropFilter: "blur(20px)",
@@ -240,7 +296,7 @@ const TestimonialsSection = () => {
                       mb: 4,
                       lineHeight: 1.8,
                       fontWeight: 400,
-                      fontSize: { xs: "1.1rem", md: "1.4rem" },
+                      fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.4rem" },
                       fontStyle: "italic",
                     }}
                   >
@@ -302,62 +358,6 @@ const TestimonialsSection = () => {
               </Paper>
             </motion.div>
           </AnimatePresence>
-
-          {/* Navigation Buttons - Fixed outside animation */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: { xs: -50, md: -80 },
-              right: { xs: -50, md: -80 },
-              transform: "translateY(-50%)",
-              display: "flex",
-              justifyContent: "space-between",
-              pointerEvents: "none",
-              zIndex: 10,
-            }}
-          >
-            <IconButton
-              onClick={handlePrev}
-              sx={{
-                background: "rgba(62, 196, 185, 0.9)",
-                backdropFilter: "blur(10px)",
-                border: "2px solid rgba(62, 196, 185, 1)",
-                color: "#fff",
-                width: 56,
-                height: 56,
-                pointerEvents: "all",
-                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
-                "&:hover": {
-                  background: "rgba(62, 196, 185, 1)",
-                  transform: "scale(1.1)",
-                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
-                },
-              }}
-            >
-              <ArrowBackIosNewIcon />
-            </IconButton>
-            <IconButton
-              onClick={handleNext}
-              sx={{
-                background: "rgba(62, 196, 185, 0.9)",
-                backdropFilter: "blur(10px)",
-                border: "2px solid rgba(62, 196, 185, 1)",
-                color: "#fff",
-                width: 56,
-                height: 56,
-                pointerEvents: "all",
-                boxShadow: "0 8px 24px rgba(62, 196, 185, 0.4)",
-                "&:hover": {
-                  background: "rgba(62, 196, 185, 1)",
-                  transform: "scale(1.1)",
-                  boxShadow: "0 12px 32px rgba(62, 196, 185, 0.6)",
-                },
-              }}
-            >
-              <ArrowForwardIosIcon />
-            </IconButton>
-          </Box>
 
           {/* Dots Indicator */}
           <Box

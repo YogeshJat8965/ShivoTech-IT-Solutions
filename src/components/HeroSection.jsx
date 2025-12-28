@@ -454,10 +454,11 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={2}
+              direction="row"
+              spacing={{ xs: 1, sm: 2 }}
               sx={{
                 justifyContent: { xs: "center", md: "flex-start" },
+                flexWrap: "nowrap",
               }}
             >
               <motion.div
@@ -470,9 +471,9 @@ const HeroSection = () => {
                   size="large"
                   href="#contact"
                   sx={{
-                    px: 5,
-                    py: 2,
-                    fontSize: "1.1rem",
+                    px: { xs: 2, sm: 5 },
+                    py: { xs: 1.5, sm: 2 },
+                    fontSize: { xs: "0.9rem", sm: "1.1rem" },
                     borderRadius: 3,
                     boxShadow: "0 8px 32px rgba(245, 158, 11, 0.4)",
                     "&:hover": {
@@ -481,7 +482,8 @@ const HeroSection = () => {
                     },
                   }}
                 >
-                  Start Your Project →
+                  <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>Start Your Project →</Box>
+                  <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>Start Your Project</Box>
                 </AppButton>
               </motion.div>
 
@@ -494,9 +496,9 @@ const HeroSection = () => {
                   size="large"
                   href="#services"
                   sx={{
-                    px: 5,
-                    py: 2,
-                    fontSize: "1.1rem",
+                    px: { xs: 2, sm: 5 },
+                    py: { xs: 1.5, sm: 2 },
+                    fontSize: { xs: "0.9rem", sm: "1.1rem" },
                     borderRadius: 3,
                     color: "#fff",
                     borderColor: "rgba(255, 255, 255, 0.3)",

@@ -379,7 +379,7 @@ const Services = () => {
           px: 4,
         }}
       >
-        <Box sx={{ maxWidth: 1400, mx: "auto", px: 4 }}>
+        <Box sx={{ maxWidth: 1400, mx: "auto" }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -417,7 +417,7 @@ const Services = () => {
             sx={{
               display: "flex",
               flexWrap: "wrap",
-              gap: 3,
+              gap: { xs: 0, sm: 3 },
               justifyContent: "center",
             }}
           >
@@ -427,7 +427,9 @@ const Services = () => {
                 sx={{
                   flex: "1 1 calc(25% - 24px)",
                   minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(25% - 24px)" },
+                  maxWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(25% - 24px)" },
                   display: "flex",
+                  mb: { xs: 3, sm: 0 },
                 }}
               >
                 <motion.div
