@@ -232,6 +232,7 @@ const drawerList = (
         left: 0,
         right: 0,
         zIndex: 1100,
+        borderRadius: { xs: 0, md: 0 },
       }}
     >
       <Toolbar sx={{ 
@@ -407,6 +408,7 @@ const drawerList = (
                   background: 'transparent',
                   boxShadow: 'none',
                   width: '100%',
+                  borderRadius: 0,
                 }
               }}
               transitionDuration={{
