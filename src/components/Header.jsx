@@ -89,7 +89,7 @@ const drawerList = (
     >
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
         <Box 
-          sx={{ display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer' }}
+          sx={{ display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer', ml: -1 }}
           onClick={() => {
             setDrawerOpen(false);
             navigate('/');
@@ -98,7 +98,7 @@ const drawerList = (
           <img 
             src={logo} 
             alt="ShivoTech" 
-            style={{ width: 50, height: 50 }}
+            style={{ width: 55, height: 55 }}
           />
           <Typography variant="h6" sx={{ color: '#3EC4B9', fontWeight: 700 }}>
             ShivoTech

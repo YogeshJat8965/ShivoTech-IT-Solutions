@@ -36,7 +36,7 @@ const Footer = () => {
             component="img"
             src={logo}
             alt="ShivoTech IT Solutions Logo"
-            sx={{ height: 120, width: 160, display: "block", mb: 2, ml: 0 }}
+            sx={{ height: 120, width: 120, display: "block", mb: 2, ml: -2.1 }}
           />
           <Typography variant="body2" sx={{ color: "#64748b" }}>
             <Box component="span" sx={{ color: '#092e5c', fontWeight: 600 }}>Shivo</Box>
