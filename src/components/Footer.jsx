@@ -11,8 +11,8 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background: "linear-gradient(135deg, #1a202c 0%, #2d3748 100%)",
-        color: "#fff",
+        background: "linear-gradient(135deg, #eff3f5ff 0%, #87bcecff 100%)",
+        color: "#1a1c1fff",
         px: 4,
         py: 8,
         mt: 0,
@@ -31,24 +31,14 @@ const Footer = () => {
         mx="auto"
       >
         {/* Column 1: Logo + About */}
-        <Box flex={1} minWidth={240}>
+        <Box flex={1} minWidth={240} sx={{ width: "100%" }}>
           <Box
-            sx={{
-              display: "inline-block",
-              background: "rgba(255, 255, 255, 0.95)",
-              borderRadius: 2,
-              p: 2,
-              mb: 2
-            }}
-          >
-            <Box
-              component="img"
-              src={logo}
-              alt="ShivoTech IT Solutions Logo"
-              sx={{ height: 120, width: 160, display: "block" }}
-            />
-          </Box>
-          <Typography variant="body2" sx={{ color: "#cbd5e0" }}>
+            component="img"
+            src={logo}
+            alt="ShivoTech IT Solutions Logo"
+            sx={{ height: 120, width: 160, display: "block", mb: 2, ml: 0 }}
+          />
+          <Typography variant="body2" sx={{ color: "#64748b" }}>
             <Box component="span" sx={{ color: '#092e5c', fontWeight: 600 }}>Shivo</Box>
             <Box component="span" sx={{ color: '#3EC4B9', fontWeight: 600 }}>Tech</Box> IT Solutions is your one-stop agency for Web, SEO, Marketing & Design.
           </Typography>
@@ -56,7 +46,7 @@ const Footer = () => {
 
         {/* Column 2: Navigation */}
         <Box flex={1} minWidth={200}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1, color: "#fff" }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1, color: "#1e293b" }}>
             Quick Links
           </Typography>
           <Stack spacing={1}>
@@ -66,7 +56,7 @@ const Footer = () => {
                 href={`#${item.toLowerCase()}`}
                 underline="hover"
                 sx={{
-                  color: "#cbd5e0",
+                  color: "#64748b",
                   fontSize: 14,
                   transition: "all 0.3s ease",
                   "&:hover": {
@@ -86,22 +76,22 @@ const Footer = () => {
           <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1, color: "#3EC4B9" }}>
             Contact Us
           </Typography>
-          <Typography variant="body2" sx={{ color: "#cbd5e0", mb: 1 }}>
+          <Typography variant="body2" sx={{ color: "#64748b", mb: 1 }}>
             Email: shivotechit@gmail.com 
           </Typography>
-          <Typography variant="body2" sx={{ color: "#cbd5e0", mb: 1 }}>
+          <Typography variant="body2" sx={{ color: "#64748b", mb: 1 }}>
             Phone: +91 78050 58023
           </Typography>
-          <Typography variant="body2" sx={{ color: "#cbd5e0" }}>
+          <Typography variant="body2" sx={{ color: "#64748b" }}>
             Mon – Fri: 10 AM – 6 PM
           </Typography>
         </Box>
       </Box>
 
-      <Divider sx={{ my: 4, borderColor: "rgba(62, 196, 185, 0.2)" }} />
+      <Divider sx={{ my: 4, borderColor: "rgba(62, 196, 185, 0.3)" }} />
 
       {/* Bottom Copyright */}
-      <Typography variant="body2" color="#cbd5e0" align="center">
+      <Typography variant="body2" color="#64748b" align="center">
         © 2018 <Box component="span" sx={{ color: '#092e5c', fontWeight: 600 }}>Shivo</Box><Box component="span" sx={{ color: '#3EC4B9', fontWeight: 600 }}>Tech</Box> IT Solutions. All rights reserved.
       </Typography>
     </Box>

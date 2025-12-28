@@ -61,7 +61,7 @@ const ContactUsSection = () => {
     <Box sx={{ 
       px: 4, 
       py: 10, 
-      background: "linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%)",
+      background: "linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%)",
       position: "relative",
       overflow: "hidden",
     }} id="contact">
@@ -143,6 +143,7 @@ const ContactUsSection = () => {
           flexDirection: isMobile ? "column" : "row",
           gap: 4,
           justifyContent: "center",
+          alignItems: isMobile ? "center" : "stretch",
           maxWidth: 1400,
           mx: "auto",
         }}
@@ -151,7 +152,7 @@ const ContactUsSection = () => {
         data-aos-duration="1000"
       >
         {/* Contact Form */}
-        <Box flex={1} minWidth={300}>
+        <Box flex={1} minWidth={300} sx={{ width: isMobile ? "100%" : "auto", maxWidth: isMobile ? 500 : "none" }}>
           <Paper sx={{ 
             p: 4, 
             borderRadius: 4, 
@@ -212,7 +213,7 @@ const ContactUsSection = () => {
         </Box>
 
         {/* Contact Info */}
-        <Box flex={1} minWidth={300}>
+        <Box flex={1} minWidth={300} sx={{ width: isMobile ? "100%" : "auto", maxWidth: isMobile ? 500 : "none" }}>
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -307,11 +308,12 @@ const ContactUsSection = () => {
                     sx={{
                       width: 40,
                       height: 40,
-                      borderRadius: 2,
+                      borderRadius: "50%",
                       background: "rgba(251, 191, 36, 0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      flexShrink: 0,
                       animation: "pulse 2s ease-in-out infinite",
                       "@keyframes pulse": {
                         "0%, 100%": { boxShadow: "0 0 0 0 rgba(251, 191, 36, 0.7)" },
@@ -321,7 +323,7 @@ const ContactUsSection = () => {
                   >
                     <EmailIcon sx={{ color: "secondary.main", fontSize: 22 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>shivotechit@gmail.com </Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500, wordBreak: "break-word", flex: 1 }}>shivotechit@gmail.com </Typography>
                 </Stack>
               </motion.div>
 
@@ -352,18 +354,19 @@ const ContactUsSection = () => {
                     sx={{
                       width: 40,
                       height: 40,
-                      borderRadius: 2,
+                      borderRadius: "50%",
                       background: "rgba(251, 191, 36, 0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      flexShrink: 0,
                       animation: "pulse 2s ease-in-out infinite",
                       animationDelay: "0.3s",
                     }}
                   >
                     <EmailIcon sx={{ color: "secondary.main", fontSize: 22 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>info@shivotechitsolutions.com</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500, wordBreak: "break-word", flex: 1 }}>info@shivotechitsolutions.com</Typography>
                 </Stack>
               </motion.div>
 
@@ -394,11 +397,12 @@ const ContactUsSection = () => {
                     sx={{
                       width: 40,
                       height: 40,
-                      borderRadius: 2,
+                      borderRadius: "50%",
                       background: "rgba(251, 191, 36, 0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      flexShrink: 0,
                       animation: "pulse 2s ease-in-out infinite",
                       animationDelay: "0.6s",
                     }}

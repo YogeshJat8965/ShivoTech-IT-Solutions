@@ -169,6 +169,7 @@ const HeroSection = () => {
                 label="Welcome to Digital Excellence"
                 sx={{
                   mb: { xs: 2, md: 3 },
+                  mt: { xs: 3, md: 0 },
                   px: 2,
                   py: 2.5,
                   fontSize: "1rem",

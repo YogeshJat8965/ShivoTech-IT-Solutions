@@ -165,7 +165,7 @@ const AboutSection = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                3+ Years Experience
+                7+ Years Experience
               </Typography>
             </Box>
           </Box>

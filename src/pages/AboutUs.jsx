@@ -459,11 +459,14 @@ const AboutUs = () => {
                           justifyContent: "center",
                           mx: "auto",
                           mb: 3,
-                          color: "#fff",
                           boxShadow: `0 10px 30px ${item.gradient.match(/#[A-F0-9]{6}/i)[0]}40`,
                           transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                           "&:hover": {
                             transform: "scale(1.1) rotate(5deg)",
+                          },
+                          "& svg": {
+                            color: "#fff !important",
+                            fontSize: "45px !important",
                           },
                         }}
                       >
