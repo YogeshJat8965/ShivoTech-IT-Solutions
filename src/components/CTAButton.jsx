@@ -43,7 +43,7 @@ const FloatingActions = () => {
       if (type === "whatsapp") {
         window.open("https://wa.me/917805058023", "_blank");
       } else {
-        window.location.href = "tel:+919981255949";
+        window.location.href = "tel:+917805058023";
       }
     } else {
       setExpanded(type);

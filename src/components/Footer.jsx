@@ -82,9 +82,9 @@ const Footer = () => {
           <Typography variant="body2" sx={{ color: "#64748b", mb: 1 }}>
             Phone: +91 78050 58023
           </Typography>
-          <Typography variant="body2" sx={{ color: "#64748b" }}>
+          {/* <Typography variant="body2" sx={{ color: "#64748b" }}>
             Mon – Fri: 10 AM – 6 PM
-          </Typography>
+          </Typography> */}
         </Box>
       </Box>
 

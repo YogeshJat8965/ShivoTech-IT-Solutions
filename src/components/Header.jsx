@@ -87,7 +87,7 @@ const drawerList = (
         zIndex: 1,
       }}
     >
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+      <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
         <Box 
           sx={{ display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer' }}
           onClick={() => {
@@ -147,8 +147,8 @@ const drawerList = (
           }}
           sx={{
             borderRadius: 0,
-            mb: 1,
-            py: 1.5,
+            mb: 0.5,
+            py: 1,
             transition: 'all 0.3s ease',
             animation: `slideInRight 0.5s ease-out ${index * 0.1}s backwards`,
             '@keyframes slideInRight': {
