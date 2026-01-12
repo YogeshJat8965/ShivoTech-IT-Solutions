@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import LaunchIcon from "@mui/icons-material/Launch";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -18,12 +18,12 @@ const featuredProjects = [
     color: "#F59E0B",
   },
   {
-    title: "MyeKisan",
-    description: "Agricultural platform connecting farmers with buyers and market insights",
-    url: "https://myekisan.com/",
-    icon: <AgricultureIcon sx={{ fontSize: 45 }} />,
-    gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
-    color: "#10B981",
+    title: "Kalyanautsava",
+    description: "Matrimonial platform with advanced partner search and secure messaging system",
+    url: "https://www.kalyanautsava.cloud/",
+    icon: <FavoriteIcon sx={{ fontSize: 45 }} />,
+    gradient: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
+    color: "#EC4899",
   },
   {
     title: "Frames by Mayank",

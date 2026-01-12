@@ -13,7 +13,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import CodeIcon from "@mui/icons-material/Code";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -22,6 +22,23 @@ import Footer from "../components/Footer";
 const projects = [
   {
     id: 1,
+    title: "Kalyanautsava",
+    description: "A comprehensive matrimonial platform connecting individuals seeking life partners with advanced search filters, premium memberships, and profile verification.",
+    url: "https://www.kalyanautsava.cloud/",
+    category: "Social & Matchmaking",
+    icon: <FavoriteIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
+    color: "#EC4899",
+    tags: ["Next.js", "Matrimonial", "Real-time Chat", "Payment Gateway"],
+    features: [
+      "Advanced Partner Search & Filters",
+      "Premium Membership Plans",
+      "Secure Messaging & Notifications",
+      "Profile Verification System"
+    ],
+  },
+  {
+    id: 2,
     title: "Naidiili Desi Tandoor",
     description: "A premium restaurant website featuring authentic Indian cuisine with online ordering system, menu showcase, and reservation management.",
     url: "https://naidillidesitandoor.com/",
@@ -35,23 +52,6 @@ const projects = [
       "Table Reservation System",
       "Location Integration",
       "Mobile Optimized"
-    ],
-  },
-  {
-    id: 2,
-    title: "MyeKisan",
-    description: "Agricultural platform connecting farmers directly with buyers, featuring real-time pricing, crop management tools, and marketplace functionality.",
-    url: "https://myekisan.com/",
-    category: "Agriculture Tech",
-    icon: <AgricultureIcon sx={{ fontSize: 50 }} />,
-    gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
-    color: "#10B981",
-    tags: ["Web App", "Marketplace", "Farmer Connect", "Real-time Data"],
-    features: [
-      "Direct Farmer-Buyer Connection",
-      "Real-time Market Prices",
-      "Crop Management",
-      "Secure Transactions"
     ],
   },
   {
