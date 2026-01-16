@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import LaunchIcon from "@mui/icons-material/Launch";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const featuredProjects = [
@@ -26,12 +26,12 @@ const featuredProjects = [
     color: "#EC4899",
   },
   {
-    title: "Frames by Mayank",
-    description: "Professional photography portfolio with elegant gallery and booking system",
-    url: "https://framesbymayank.vercel.app/",
-    icon: <CameraAltIcon sx={{ fontSize: 45 }} />,
-    gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
-    color: "#8B5CF6",
+    title: "ACQUIRE ORGANICS",
+    description: "Organic products e-commerce platform with sustainable farming solutions",
+    url: "https://acquireorganics.com",
+    icon: <LocalFloristIcon sx={{ fontSize: 45 }} />,
+    gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+    color: "#10B981",
   },
 ];
 

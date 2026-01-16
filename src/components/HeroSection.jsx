@@ -54,10 +54,10 @@ const HeroSection = () => {
   };
 
   const metricCards = [
-    { icon: <RocketLaunchIcon />, value: "250+", label: "Projects", color: "#F59E0B", delay: 0 },
-    { icon: <PeopleIcon />, value: "180+", label: "Happy Clients", color: "#3B82F6", delay: 0.1 },
-    { icon: <TrendingUpIcon />, value: "85%", label: "Growth Rate", color: "#10B981", delay: 0.2 },
-    { icon: <EmojiEventsIcon />, value: "95%", label: "Satisfaction", color: "#8B5CF6", delay: 0.3 },
+    { icon: <RocketLaunchIcon />, value: "80+", label: "Projects", color: "#F59E0B", delay: 0 },
+    { icon: <PeopleIcon />, value: "78+", label: "Happy Clients", color: "#3B82F6", delay: 0.1 },
+    { icon: <TrendingUpIcon />, value: "96%", label: "Growth Rate", color: "#10B981", delay: 0.2 },
+    { icon: <EmojiEventsIcon />, value: "98%", label: "Satisfaction", color: "#8B5CF6", delay: 0.3 },
   ];
 
   return (

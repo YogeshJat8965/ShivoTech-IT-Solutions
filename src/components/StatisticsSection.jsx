@@ -7,35 +7,51 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import GroupsIcon from "@mui/icons-material/Groups";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import ScheduleIcon from "@mui/icons-material/Schedule";
 
 const stats = [
   {
     icon: BusinessCenterIcon,
-    number: 250,
+    number: 80,
     suffix: "+",
     label: "Projects Completed",
     color: "#F59E0B",
   },
   {
     icon: GroupsIcon,
-    number: 180,
+    number: 78,
     suffix: "+",
     label: "Happy Clients",
     color: "#3B82F6",
   },
   {
     icon: TrendingUpIcon,
-    number: 95,
+    number: 98,
     suffix: "%",
     label: "Client Satisfaction",
     color: "#10B981",
   },
   {
     icon: EmojiEventsIcon,
-    number: 5,
+    number: 7,
     suffix: "+",
     label: "Years Experience",
     color: "#FCD34D",
+  },
+  {
+    icon: VerifiedIcon,
+    number: 100,
+    suffix: "%",
+    label: "Quality Assurance",
+    color: "#8B5CF6",
+  },
+  {
+    icon: ScheduleIcon,
+    number: 99,
+    suffix: "%",
+    label: "On-Time Delivery",
+    color: "#EF4444",
   },
 ];
 

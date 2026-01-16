@@ -54,19 +54,19 @@ const features = [
 const stats = [
   {
     icon: <WorkIcon sx={{ fontSize: 50, color: "secondary.main" }} />,
-    number: 20,
+    number: 80,
     suffix: "+",
     label: "Projects Completed",
   },
   {
     icon: <PeopleIcon sx={{ fontSize: 50, color: "#3B82F6" }} />,
-    number: 18,
+    number: 78,
     suffix: "+",
     label: "Happy Clients",
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 50, color: "#10B981" }} />,
-    number: 95,
+    number: 98,
     suffix: "%",
     label: "Client Satisfaction",
   },
@@ -290,9 +290,9 @@ const WhyChooseUs = () => {
               <Box
                 key={index}
                 sx={{
-                  flex: "1 1 calc(16.666% - 20px)",
-                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "150px" },
-                  maxWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(16.666% - 20px)" }
+                  flex: "1 1 calc(33.333% - 20px)",
+                  minWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "250px" },
+                  maxWidth: { xs: "100%", sm: "calc(50% - 12px)", md: "calc(33.333% - 20px)" }
                 }}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}

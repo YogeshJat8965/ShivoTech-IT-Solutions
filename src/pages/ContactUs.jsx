@@ -255,7 +255,7 @@ const ContactUs = () => {
         </Grid>
 
         {/* Main Contact Section */}
-        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" justifyContent="center">
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="flex-start" justifyContent="center">
           {/* Contact Form */}
           <Grid item xs={12} md={7} sx={{ display: "flex", justifyContent: "center" }}>
             <motion.div
@@ -397,98 +397,104 @@ const ContactUs = () => {
               transition={{ duration: 0.6 }}
               style={{ height: "100%", width: "100%", maxWidth: "450px" }}
             >
-              <Stack spacing={4} sx={{ height: "100%" }}>
-                {/* Business Hours */}
-                <Paper
-                  elevation={3}
-                  sx={{
-                    p: 4,
-                    borderRadius: 4,
-                    background: "linear-gradient(135deg, #3EC4B9 0%, #2A9D8F 100%)",
-                    color: "#fff",
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 3, sm: 4, md: 5 },
+                  borderRadius: 4,
+                  background: "linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)",
+                  color: "#fff",
+                }}
+              >
+                <Typography 
+                  variant="h5" 
+                  sx={{ 
+                    fontWeight: 700, 
+                    mb: 4,
+                    color: "#FCD34D",
+                    fontSize: { xs: "1.25rem", sm: "1.5rem" }
                   }}
                 >
+                  Our Contact Details
+                </Typography>
+                
+                <Stack spacing={3}>
                   <Box
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 2,
-                      mb: 3,
+                      gap: { xs: 1.5, sm: 2 },
+                      p: { xs: 1.5, sm: 2 },
+                      borderRadius: 2,
+                      background: "rgba(255, 255, 255, 0.1)",
+                      backdropFilter: "blur(10px)",
                     }}
                   >
-                    <AccessTimeIcon sx={{ fontSize: 40 }} />
-                    <Typography variant="h5" sx={{ fontWeight: 700 }}>
-                      Business Hours
+                    <Box
+                      sx={{
+                        width: { xs: 45, sm: 50 },
+                        height: { xs: 45, sm: 50 },
+                        borderRadius: 2,
+                        background: "#FCD34D",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <EmailIcon sx={{ fontSize: { xs: 24, sm: 28 }, color: "#3B82F6" }} />
+                    </Box>
+                    <Typography 
+                      variant="body1" 
+                      sx={{ 
+                        fontWeight: 500,
+                        fontSize: { xs: "0.875rem", sm: "1rem" },
+                        wordBreak: "break-word",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      shivotechit@gmail.com
                     </Typography>
                   </Box>
-                  <Stack spacing={2}>
-                    <Box>
-                      <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
-                        Monday - Friday
-                      </Typography>
-                      <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                        9:00 AM - 6:00 PM
-                      </Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
-                        Saturday
-                      </Typography>
-                      <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                        10:00 AM - 4:00 PM
-                      </Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
-                        Sunday
-                      </Typography>
-                      <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                        Closed
-                      </Typography>
-                    </Box>
-                  </Stack>
-                </Paper>
 
-                {/* Quick Response */}
-                <Paper
-                  elevation={3}
-                  sx={{
-                    p: 4,
-                    borderRadius: 4,
-                    background: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
-                    color: "#fff",
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-                    Need Immediate Assistance?
-                  </Typography>
-                  <Typography variant="body2" sx={{ mb: 3, opacity: 0.9 }}>
-                    Chat with us on WhatsApp for instant support!
-                  </Typography>
-                  <IconButton
-                    href="https://wa.me/917805058023"
-                    target="_blank"
+                  <Box
                     sx={{
-                      width: 60,
-                      height: 60,
-                      background: "#fff",
-                      color: "#25D366",
-                      animation: "bounce 2s infinite",
-                      "@keyframes bounce": {
-                        "0%, 100%": { transform: "translateY(0)" },
-                        "50%": { transform: "translateY(-10px)" },
-                      },
-                      "&:hover": {
-                        background: "#f0f0f0",
-                        transform: "scale(1.1)",
-                      },
+                      display: "flex",
+                      alignItems: "center",
+                      gap: { xs: 1.5, sm: 2 },
+                      p: { xs: 1.5, sm: 2 },
+                      borderRadius: 2,
+                      background: "rgba(255, 255, 255, 0.1)",
+                      backdropFilter: "blur(10px)",
                     }}
                   >
-                    <WhatsAppIcon sx={{ fontSize: 35 }} />
-                  </IconButton>
-                </Paper>
-              </Stack>
+                    <Box
+                      sx={{
+                        width: { xs: 45, sm: 50 },
+                        height: { xs: 45, sm: 50 },
+                        borderRadius: 2,
+                        background: "#FCD34D",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <PhoneIcon sx={{ fontSize: { xs: 24, sm: 28 }, color: "#3B82F6" }} />
+                    </Box>
+                    <Typography 
+                      variant="body1" 
+                      sx={{ 
+                        fontWeight: 500,
+                        fontSize: { xs: "0.875rem", sm: "1rem" },
+                      }}
+                    >
+                      +91 78050 58023
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Paper>
             </motion.div>
           </Grid>
         </Grid>

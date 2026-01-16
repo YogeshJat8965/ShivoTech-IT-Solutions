@@ -13,8 +13,9 @@ import SectionHeading from "./reusable/SectionHeading";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import amit from "../assets/images/amit.jpg";
-import prashant from "../assets/images/prashant.png";
+import Aprna from "../assets/images/Aprna.jpeg";
 import yogesh from "../assets/images/yogesh.jpg";
+import Mukesh from "../assets/images/mukesh.png";
 
 AOS.init();
 
@@ -27,9 +28,15 @@ const teamMembers = [
     // linkedin: "https://linkedin.com/in/raviverma",
   },
   {
+    name: "Aprna Singh",
+    role: "Marketing & Operation Head",
+    image: Aprna,
+    bio: "Oversees marketing strategies and operational excellence.",
+  },
+  {
     name: "Mukesh Tak",
     role: "Full Stack Developer",
-    image: "/images/team4.jpg",
+    image: Mukesh,
     bio: "Develops efficient, scalable applications",
     // github: "https://github.com/priyanair",
   },
@@ -40,12 +47,6 @@ const teamMembers = [
     bio: "Expert in building scalable web applications and leading technical teams.",
     // linkedin: "https://linkedin.com/in/yogeshjat",
     // github: "https://github.com/YogeshJat8965",
-  },
-  {
-    name: "Aprna Singh",
-    role: "Marketing & Operation Head",
-    image: "/images/aprna.jpg",
-    bio: "Oversees marketing strategies and operational excellence.",
   },
 ];
 

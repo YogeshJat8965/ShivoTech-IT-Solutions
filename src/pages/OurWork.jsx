@@ -14,31 +14,16 @@ import CodeIcon from "@mui/icons-material/Code";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import Footer from "../components/Footer";
 
 const projects = [
+  
   {
     id: 1,
-    title: "Kalyanautsava",
-    description: "A comprehensive matrimonial platform connecting individuals seeking life partners with advanced search filters, premium memberships, and profile verification.",
-    url: "https://www.kalyanautsava.cloud/",
-    category: "Social & Matchmaking",
-    icon: <FavoriteIcon sx={{ fontSize: 50 }} />,
-    gradient: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
-    color: "#EC4899",
-    tags: ["Next.js", "Matrimonial", "Real-time Chat", "Payment Gateway"],
-    features: [
-      "Advanced Partner Search & Filters",
-      "Premium Membership Plans",
-      "Secure Messaging & Notifications",
-      "Profile Verification System"
-    ],
-  },
-  {
-    id: 2,
     title: "Naidiili Desi Tandoor",
     description: "A premium restaurant website featuring authentic Indian cuisine with online ordering system, menu showcase, and reservation management.",
     url: "https://naidillidesitandoor.com/",
@@ -55,7 +40,41 @@ const projects = [
     ],
   },
   {
+    id: 2,
+    title: "Kalyanautsava",
+    description: "A comprehensive matrimonial platform connecting individuals seeking life partners with advanced search filters, premium memberships, and profile verification.",
+    url: "https://www.kalyanautsava.cloud/",
+    category: "Social & Matchmaking",
+    icon: <FavoriteIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
+    color: "#EC4899",
+    tags: ["Next.js", "Matrimonial", "Real-time Chat", "Payment Gateway"],
+    features: [
+      "Advanced Partner Search & Filters",
+      "Premium Membership Plans",
+      "Secure Messaging & Notifications",
+      "Profile Verification System"
+    ],
+  },
+  {
     id: 3,
+    title: "ACQUIRE ORGANICS",
+    description: "Organic products e-commerce platform offering sustainable farming solutions and eco-friendly products promoting healthy living.",
+    url: "https://acquireorganics.com",
+    category: "E-commerce & Sustainability",
+    icon: <LocalFloristIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+    color: "#10B981",
+    tags: ["E-commerce", "Organic", "Sustainable", "Eco-friendly"],
+    features: [
+      "Organic Product Catalog",
+      "Sustainable Farming Info",
+      "Eco-friendly Shopping",
+      "Healthy Living Resources"
+    ],
+  },
+  {
+    id: 4,
     title: "Frames by Mayank",
     description: "Professional photography portfolio showcasing stunning visual work with an elegant gallery, booking system, and client testimonials.",
     url: "https://framesbymayank.vercel.app/",
@@ -76,7 +95,7 @@ const projects = [
 const achievements = [
   {
     icon: <EmojiEventsIcon sx={{ fontSize: 40 }} />,
-    number: "50+",
+    number: "80+",
     label: "Projects Delivered",
     color: "#F59E0B",
   },
@@ -442,7 +461,7 @@ const OurWork = () => {
 
                     {/* CTA Button */}
                     <Grid item xs={12} md={3}>
-                      <Box sx={{ textAlign: { xs: "center", md: "right" } }}>
+                      <Box sx={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <Button
                           variant="contained"
                           size="large"
@@ -476,6 +495,7 @@ const OurWork = () => {
                             mt: 1.5,
                             color: "text.secondary",
                             fontWeight: 600,
+                            textAlign: "center",
                           }}
                         >
                           Click to explore live project
