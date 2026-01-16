@@ -58,23 +58,6 @@ const services = [
     benefits: ["Native Performance", "Scalable", "Secure", "Play Store Ready"]
   },
   {
-    icon: <MarketingIcon sx={{ fontSize: 50 }} />,
-    title: "Digital Marketing",
-    description:
-      "Amplify your brand reach with data-driven marketing strategies. We create campaigns that convert, engage, and build lasting customer relationships.",
-    features: [
-      "Social Media Marketing",
-      "PPC Campaigns (Google Ads)",
-      "Email Marketing Automation",
-      "Content Marketing",
-      "Analytics & Reporting",
-      "Conversion Optimization"
-    ],
-    color: "#F59E0B",
-    gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
-    benefits: ["ROI Focused", "Multi-Channel", "24/7 Support", "Real-Time Analytics"]
-  },
-  {
     icon: <SEOIcon sx={{ fontSize: 50 }} />,
     title: "SEO Optimization",
     description:
@@ -91,6 +74,24 @@ const services = [
     gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
     benefits: ["Top Rankings", "Organic Growth", "Quality Traffic", "Sustainable Results"]
   },
+  {
+    icon: <MarketingIcon sx={{ fontSize: 50 }} />,
+    title: "Digital Marketing",
+    description:
+      "Amplify your brand reach with data-driven marketing strategies. We create campaigns that convert, engage, and build lasting customer relationships.",
+    features: [
+      "Social Media Marketing",
+      "PPC Campaigns (Google Ads)",
+      "Email Marketing Automation",
+      "Content Marketing",
+      "Analytics & Reporting",
+      "Conversion Optimization"
+    ],
+    color: "#F59E0B",
+    gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+    benefits: ["ROI Focused", "Multi-Channel", "24/7 Support", "Real-Time Analytics"]
+  },
+  
 ];
 
 const whyChooseUs = [
