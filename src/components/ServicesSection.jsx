@@ -10,7 +10,7 @@ import {
 import WebIcon from "@mui/icons-material/Language";
 import MarketingIcon from "@mui/icons-material/TrendingUp";
 import SEOIcon from "@mui/icons-material/Search";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import AndroidIcon from "@mui/icons-material/Android";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import SectionHeading from "./reusable/SectionHeading";
@@ -27,14 +27,15 @@ const services = [
     gradient: "linear-gradient(135deg, #3EC4B9 0%, #2A9D8F 100%)",
   },
   {
-    icon: <MarketingIcon sx={{ fontSize: 40 }} />,
-    title: "Digital Marketing",
+    icon: <AndroidIcon sx={{ fontSize: 40 }} />,
+    title: "Android Development",
     description:
-      "Data-driven campaigns that convert leads into loyal customers.",
-    features: ["Social Media", "PPC Campaigns", "Email Marketing", "Analytics"],
-    color: "#F59E0B",
-    gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+      "Native Android apps with seamless performance and modern design.",
+    features: ["Native Android", "Material Design", "Firebase Integration", "Play Store Deploy"],
+    color: "#3B82F6",
+    gradient: "linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)",
   },
+
   {
     icon: <SEOIcon sx={{ fontSize: 40 }} />,
     title: "SEO Optimization",
@@ -45,13 +46,13 @@ const services = [
     gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
   },
   {
-    icon: <DesignServicesIcon sx={{ fontSize: 40 }} />,
-    title: "Graphic Designing",
+    icon: <MarketingIcon sx={{ fontSize: 40 }} />,
+    title: "Digital Marketing",
     description:
-      "Stunning visual designs that reflect your brand identity.",
-    features: ["Logo Design", "Brand Identity", "UI/UX Design", "Marketing Materials"],
-    color: "#EF4444",
-    gradient: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
+      "Data-driven campaigns that convert leads into loyal customers.",
+    features: ["Social Media", "PPC Campaigns", "Email Marketing", "Analytics"],
+    color: "#F59E0B",
+    gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
   },
 ];
 

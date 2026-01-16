@@ -75,13 +75,64 @@ const projects = [
   },
   {
     id: 4,
+    title: "LPG Music Academy",
+    description: "Comprehensive music learning platform offering online and offline music courses, instructor profiles, and student performance tracking.",
+    url: "https://lpgmusicacademy.com",
+    category: "Education & Music",
+    icon: <CodeIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+    color: "#3B82F6",
+    tags: ["Website", "Education", "Music Academy", "Responsive"],
+    features: [
+      "Course Catalog & Enrollment",
+      "Instructor Profiles",
+      "Student Dashboard",
+      "Performance Tracking"
+    ],
+  },
+  {
+    id: 5,
+    title: "LPG Music Academy App",
+    description: "Mobile application for LPG Music Academy featuring seamless course access, practice sessions, and progress monitoring on the go.",
+    url: "https://play.google.com/store/apps/details?id=com.lpgmusic.academy",
+    category: "Mobile App & Education",
+    icon: <CodeIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
+    color: "#8B5CF6",
+    tags: ["Android App", "Music Learning", "Mobile", "Education"],
+    features: [
+      "Mobile Course Access",
+      "Practice Session Timer",
+      "Progress Notifications",
+      "Offline Content Access"
+    ],
+  },
+  {
+    id: 6,
+    title: "Aapno School App",
+    description: "Innovative school management mobile app connecting students, teachers, and parents with attendance tracking and communication features.",
+    url: "https://play.google.com/store/apps/details?id=com.app.aapnoschool",
+    category: "Education & School Management",
+    icon: <CodeIcon sx={{ fontSize: 50 }} />,
+    gradient: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
+    color: "#EF4444",
+    tags: ["Android App", "School Management", "Education", "Mobile"],
+    features: [
+      "Attendance Management",
+      "Assignment Tracking",
+      "Parent-Teacher Communication",
+      "Real-time Notifications"
+    ],
+  },
+  {
+    id: 7,
     title: "Frames by Mayank",
     description: "Professional photography portfolio showcasing stunning visual work with an elegant gallery, booking system, and client testimonials.",
     url: "https://framesbymayank.vercel.app/",
     category: "Photography Portfolio",
     icon: <CameraAltIcon sx={{ fontSize: 50 }} />,
-    gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
-    color: "#8B5CF6",
+    gradient: "linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)",
+    color: "#06B6D4",
     tags: ["Portfolio", "Gallery", "Responsive", "Modern UI"],
     features: [
       "Dynamic Photo Gallery",
@@ -486,7 +537,7 @@ const OurWork = () => {
                             },
                           }}
                         >
-                          Visit Website
+                          {project.url.includes('play.google.com') ? 'Visit Play Store' : 'Visit Website'}
                         </Button>
                         <Typography
                           variant="caption"

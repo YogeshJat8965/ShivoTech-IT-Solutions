@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import WebIcon from "@mui/icons-material/Language";
 import MarketingIcon from "@mui/icons-material/TrendingUp";
 import SEOIcon from "@mui/icons-material/Search";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import AndroidIcon from "@mui/icons-material/Android";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
@@ -39,6 +39,23 @@ const services = [
     color: "#3EC4B9",
     gradient: "linear-gradient(135deg, #3EC4B9 0%, #2A9D8F 100%)",
     benefits: ["Fast Loading", "SEO Optimized", "Mobile First", "Secure"]
+  },
+  {
+    icon: <AndroidIcon sx={{ fontSize: 50 }} />,
+    title: "Android Development",
+    description:
+      "Build powerful native Android applications that deliver exceptional user experiences. We create scalable, secure, and feature-rich mobile apps for the Android ecosystem.",
+    features: [
+      "Native Android Development",
+      "Material Design Implementation",
+      "Firebase Integration",
+      "Google Play Store Deployment",
+      "In-App Purchases",
+      "Push Notifications"
+    ],
+    color: "#3B82F6",
+    gradient: "linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)",
+    benefits: ["Native Performance", "Scalable", "Secure", "Play Store Ready"]
   },
   {
     icon: <MarketingIcon sx={{ fontSize: 50 }} />,
@@ -73,23 +90,6 @@ const services = [
     color: "#8B5CF6",
     gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
     benefits: ["Top Rankings", "Organic Growth", "Quality Traffic", "Sustainable Results"]
-  },
-  {
-    icon: <DesignServicesIcon sx={{ fontSize: 50 }} />,
-    title: "Graphic Designing",
-    description:
-      "Create stunning visual identities that captivate your audience. From logos to complete brand systems, we bring your vision to life.",
-    features: [
-      "Logo & Brand Identity",
-      "UI/UX Design",
-      "Marketing Materials",
-      "Social Media Graphics",
-      "Print Design",
-      "Motion Graphics"
-    ],
-    color: "#EF4444",
-    gradient: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
-    benefits: ["Brand Recognition", "Professional", "Unique Design", "Fast Delivery"]
   },
 ];
 

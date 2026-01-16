@@ -252,6 +252,7 @@ const drawerList = (
             cursor: 'pointer',
             transition: 'transform 0.3s ease',
             gap: 1.5,
+            ml: { xs: -1, md: 0 },
             '&:hover': {
               transform: 'scale(1.02)',
             }
@@ -264,27 +265,28 @@ const drawerList = (
             src={logo} 
             alt="ShivoTech IT Solutions Logo" 
             style={{ 
-              width: 100, 
-              height: 100, 
+              width: isMobile ? 80 : 100, 
+              height: isMobile ? 80 : 100, 
               padding: 5,
               transition: 'all 0.3s ease',
             }}  
           />
           <Box
             sx={{
-              display: { xs: 'none', sm: 'flex' },
+              display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
+              textAlign: 'left',
             }}
           >
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
-                fontSize: { sm: scrolled ? '1.1rem' : '1.2rem', md: scrolled ? '1.5rem' : '1.5rem' },
+                fontSize: { xs: '1.1rem', sm: scrolled ? '1.1rem' : '1.2rem', md: scrolled ? '1.5rem' : '1.5rem' },
                 transition: 'all 0.3s ease',
                 lineHeight: 1.2,
-                mb: -0.5,
+                mb: { xs: -0.2, md: -0.5 },
               }}
             >
               <span style={{ color: '#092e5c' }}>Shivo</span>
@@ -294,10 +296,10 @@ const drawerList = (
               variant="caption"
               sx={{
                 fontWeight: 600,
-                fontSize: { sm: '0.7rem', md: scrolled ? '0.75rem' : '0.8rem' },
+                fontSize: { xs: '0.7rem', sm: '0.7rem', md: scrolled ? '0.75rem' : '0.8rem' },
                 color: '#64748B',
                 transition: 'all 0.3s ease',
-                letterSpacing: '0.5px',
+                letterSpacing: { xs: '0.4px', md: '0.5px' },
               }}
             >
               IT Solutions

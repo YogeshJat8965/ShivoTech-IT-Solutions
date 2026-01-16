@@ -331,49 +331,6 @@ const ContactUsSection = () => {
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <Stack 
-                  direction="row" 
-                  spacing={2} 
-                  alignItems="center" 
-                  mt={2}
-                  sx={{
-                    position: "relative",
-                    zIndex: 1,
-                    p: 2,
-                    borderRadius: 2,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      background: "rgba(255, 255, 255, 0.1)",
-                      transform: "translateX(5px)",
-                    }
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: "50%",
-                      background: "rgba(251, 191, 36, 0.2)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                      animation: "pulse 2s ease-in-out infinite",
-                      animationDelay: "0.3s",
-                    }}
-                  >
-                    <EmailIcon sx={{ color: "secondary.main", fontSize: 22 }} />
-                  </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 500, wordBreak: "break-word", flex: 1 }}>info@shivotechitsolutions.com</Typography>
-                </Stack>
-              </motion.div>
-
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.7 }}
               >
                 <Stack 
